@@ -1,0 +1,3660 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<sbml xmlns="http://www.sbml.org/sbml/level2/version4" level="2" metaid="metaid_0000001" version="4">
+  <model id="Pokhilko2010_CircClock" name="Pokhilko2010_CircClock" metaid="metaid_0000002">
+    <notes>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>
+      This a model from the article:
+      <br/>
+        <strong> Data assimilation constrains new connections and components in a complex, eukaryotic circadian clock model.
+</strong>
+        <br/>
+Pokhilko A, Hodge SK, Stratford K, Knox K, Edwards KD, Thomson AW, Mizuno T, Millar AJ.
+      <em>Mol Syst Biol.</em>2010 Sep 21;6:416. 
+      <a href="http://www.ncbi.nlm.nih.gov/pubmed/20865009">20865009</a>,
+      <br/>
+        <strong>Abstract:</strong>
+        <br/>
+Circadian clocks generate 24-h rhythms that are entrained by the day/night cycle. Clock circuits include several light inputs and interlocked feedback loops, with complex dynamics. Multiple biological components can contribute to each part of the circuit in higher organisms. Mechanistic models with morning, evening and central feedback loops have provided a heuristic framework for the clock in plants, but were based on transcriptional control. Here, we model observed, post-transcriptional and post-translational regulation and constrain many parameter values based on experimental data. The model's feedback circuit is revised and now includes PSEUDO-RESPONSE REGULATOR 7 (PRR7) and ZEITLUPE. The revised model matches data in varying environments and mutants, and gains robustness to parameter variation. Our results suggest that the activation of important morning-expressed genes follows their release from a night inhibitor (NI). Experiments inspired by the new model support the predicted NI function and show that the PRR5 gene contributes to the NI. The multiple PRR genes of Arabidopsis uncouple events in the late night from light-driven responses in the day, increasing the flexibility of rhythmic regulation.
+   </p>
+      </body>
+    </notes>
+    <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#metaid_0000002">
+	<dc:creator>
+	<rdf:Bag>
+	<rdf:li rdf:parseType="Resource">
+	<vCard:N rdf:parseType="Resource">
+	<vCard:Family>Chelliah</vCard:Family>
+	<vCard:Given>Vijayalakshmi</vCard:Given>
+	</vCard:N>
+	<vCard:EMAIL>viji@ebi.ac.uk</vCard:EMAIL>
+	<vCard:ORG rdf:parseType="Resource">
+	<vCard:Orgname>EMBL-EBI</vCard:Orgname>
+	</vCard:ORG>
+	</rdf:li>
+	<rdf:li rdf:parseType="Resource">
+	<vCard:N rdf:parseType="Resource">
+	<vCard:Family>Pokhilko</vCard:Family>
+	<vCard:Given>Alexandra</vCard:Given>
+	</vCard:N>
+	<vCard:EMAIL>apokhilk@staffmail.ed.ac.uk</vCard:EMAIL>
+	<vCard:ORG rdf:parseType="Resource">
+	<vCard:Orgname>Edinburgh University</vCard:Orgname>
+	</vCard:ORG>
+	</rdf:li>
+	</rdf:Bag>
+	</dc:creator>
+	<dcterms:created rdf:parseType="Resource">
+	<dcterms:W3CDTF>2010-10-21T17:09:01Z</dcterms:W3CDTF>
+	</dcterms:created>
+	<dcterms:modified rdf:parseType="Resource">
+	<dcterms:W3CDTF>2014-05-28T01:21:30Z</dcterms:W3CDTF>
+	</dcterms:modified>
+	<bqmodel:is>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/biomodels.db/MODEL1007240000"/>
+	</rdf:Bag>
+	</bqmodel:is>
+	<bqmodel:is>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/biomodels.db/BIOMD0000000273"/>
+	</rdf:Bag>
+	</bqmodel:is>
+	<bqmodel:isDescribedBy>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/pubmed/20865009"/>
+	</rdf:Bag>
+	</bqmodel:isDescribedBy>
+	<bqmodel:isDerivedFrom>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/biomodels.db/BIOMD0000000089"/>
+	</rdf:Bag>
+	</bqmodel:isDerivedFrom>
+	<bqbiol:isVersionOf>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/go/GO:0007623"/>
+	</rdf:Bag>
+	</bqbiol:isVersionOf>
+	<bqbiol:hasTaxon>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/taxonomy/3702"/>
+	</rdf:Bag>
+	</bqbiol:hasTaxon>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+      <listOfFunctionDefinitions>
+      <functionDefinition id="function_4_cT_degr" name="function_4_cT_degr" metaid="metaid_0000003">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <lambda>
+            <bvar>
+              <ci> D </ci>
+            </bvar>
+            <bvar>
+              <ci> L </ci>
+            </bvar>
+            <bvar>
+              <ci> cT </ci>
+            </bvar>
+            <bvar>
+              <ci> cZG </ci>
+            </bvar>
+            <bvar>
+              <ci> cZTL </ci>
+            </bvar>
+            <bvar>
+              <ci> def </ci>
+            </bvar>
+            <bvar>
+              <ci> m6 </ci>
+            </bvar>
+            <bvar>
+              <ci> m7 </ci>
+            </bvar>
+            <bvar>
+              <ci> m8 </ci>
+            </bvar>
+            <bvar>
+              <ci> p5 </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <plus/>
+                <apply>
+                  <times/>
+                  <apply>
+                    <plus/>
+                    <apply>
+                      <times/>
+                      <ci> m6 </ci>
+                      <ci> L </ci>
+                    </apply>
+                    <apply>
+                      <times/>
+                      <ci> m7 </ci>
+                      <ci> D </ci>
+                    </apply>
+                  </apply>
+                  <ci> cT </ci>
+                  <apply>
+                    <plus/>
+                    <apply>
+                      <times/>
+                      <ci> p5 </ci>
+                      <ci> cZTL </ci>
+                    </apply>
+                    <ci> cZG </ci>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> m8 </ci>
+                  <ci> cT </ci>
+                </apply>
+              </apply>
+              <ci> def </ci>
+            </apply>
+          </lambda>
+        </math>
+            </functionDefinition>
+      <functionDefinition id="function_4_cNI_m_degr" name="function_4_cNI_m_degr" metaid="metaid_0000004">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <lambda>
+            <bvar>
+              <ci> cNI_m </ci>
+            </bvar>
+            <bvar>
+              <ci> def </ci>
+            </bvar>
+            <bvar>
+              <ci> m16 </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> m16 </ci>
+                <ci> cNI_m </ci>
+              </apply>
+              <ci> def </ci>
+            </apply>
+          </lambda>
+        </math>
+            </functionDefinition>
+      <functionDefinition id="function_4_cNI_m_trscr" name="function_4_cNI_m_trscr" metaid="metaid_0000005">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <lambda>
+            <bvar>
+              <ci> cLm </ci>
+            </bvar>
+            <bvar>
+              <ci> cP7 </ci>
+            </bvar>
+            <bvar>
+              <ci> def </ci>
+            </bvar>
+            <bvar>
+              <ci> g12 </ci>
+            </bvar>
+            <bvar>
+              <ci> g13 </ci>
+            </bvar>
+            <bvar>
+              <ci> l </ci>
+            </bvar>
+            <bvar>
+              <ci> m </ci>
+            </bvar>
+            <bvar>
+              <ci> n10 </ci>
+            </bvar>
+            <bvar>
+              <ci> n11 </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <plus/>
+                <apply>
+                  <divide/>
+                  <apply>
+                    <times/>
+                    <ci> n10 </ci>
+                    <apply>
+                      <power/>
+                      <ci> cLm </ci>
+                      <ci> l </ci>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <plus/>
+                    <apply>
+                      <power/>
+                      <ci> cLm </ci>
+                      <ci> l </ci>
+                    </apply>
+                    <apply>
+                      <power/>
+                      <ci> g12 </ci>
+                      <ci> l </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <divide/>
+                  <apply>
+                    <times/>
+                    <ci> n11 </ci>
+                    <apply>
+                      <power/>
+                      <ci> cP7 </ci>
+                      <ci> m </ci>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <plus/>
+                    <apply>
+                      <power/>
+                      <ci> cP7 </ci>
+                      <ci> m </ci>
+                    </apply>
+                    <apply>
+                      <power/>
+                      <ci> g13 </ci>
+                      <ci> m </ci>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+              <ci> def </ci>
+            </apply>
+          </lambda>
+        </math>
+            </functionDefinition>
+      <functionDefinition id="function_4_cY_trsl" name="function_4_cY_trsl" metaid="metaid_0000006">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <lambda>
+            <bvar>
+              <ci> cY_m </ci>
+            </bvar>
+            <bvar>
+              <ci> def </ci>
+            </bvar>
+            <bvar>
+              <ci> p6 </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> p6 </ci>
+                <ci> cY_m </ci>
+              </apply>
+              <ci> def </ci>
+            </apply>
+          </lambda>
+        </math>
+            </functionDefinition>
+      <functionDefinition id="function_4_cP7_degr" name="function_4_cP7_degr" metaid="metaid_0000007">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <lambda>
+            <bvar>
+              <ci> D </ci>
+            </bvar>
+            <bvar>
+              <ci> L </ci>
+            </bvar>
+            <bvar>
+              <ci> cP7 </ci>
+            </bvar>
+            <bvar>
+              <ci> def </ci>
+            </bvar>
+            <bvar>
+              <ci> m15 </ci>
+            </bvar>
+            <bvar>
+              <ci> m23 </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <apply>
+                  <plus/>
+                  <apply>
+                    <times/>
+                    <ci> m15 </ci>
+                    <ci> L </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> m23 </ci>
+                    <ci> D </ci>
+                  </apply>
+                </apply>
+                <ci> cP7 </ci>
+              </apply>
+              <ci> def </ci>
+            </apply>
+          </lambda>
+        </math>
+            </functionDefinition>
+      <functionDefinition id="function_4_cT_trsl" name="function_4_cT_trsl" metaid="metaid_0000008">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <lambda>
+            <bvar>
+              <ci> cT_m </ci>
+            </bvar>
+            <bvar>
+              <ci> def </ci>
+            </bvar>
+            <bvar>
+              <ci> p4 </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> p4 </ci>
+                <ci> cT_m </ci>
+              </apply>
+              <ci> def </ci>
+            </apply>
+          </lambda>
+        </math>
+            </functionDefinition>
+      <functionDefinition id="function_4_cY_m_trscr" name="function_4_cY_m_trscr" metaid="metaid_0000009">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <lambda>
+            <bvar>
+              <ci> D </ci>
+            </bvar>
+            <bvar>
+              <ci> L </ci>
+            </bvar>
+            <bvar>
+              <ci> cL </ci>
+            </bvar>
+            <bvar>
+              <ci> cP </ci>
+            </bvar>
+            <bvar>
+              <ci> cT </ci>
+            </bvar>
+            <bvar>
+              <ci> def </ci>
+            </bvar>
+            <bvar>
+              <ci> g </ci>
+            </bvar>
+            <bvar>
+              <ci> g16 </ci>
+            </bvar>
+            <bvar>
+              <ci> g7 </ci>
+            </bvar>
+            <bvar>
+              <ci> n5 </ci>
+            </bvar>
+            <bvar>
+              <ci> n6 </ci>
+            </bvar>
+            <bvar>
+              <ci> q2 </ci>
+            </bvar>
+            <bvar>
+              <ci> s </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <plus/>
+                <apply>
+                  <times/>
+                  <ci> L </ci>
+                  <ci> q2 </ci>
+                  <ci> cP </ci>
+                </apply>
+                <apply>
+                  <divide/>
+                  <apply>
+                    <times/>
+                    <apply>
+                      <divide/>
+                      <apply>
+                        <times/>
+                        <apply>
+                          <plus/>
+                          <apply>
+                            <times/>
+                            <ci> n5 </ci>
+                            <ci> L </ci>
+                          </apply>
+                          <apply>
+                            <times/>
+                            <ci> n6 </ci>
+                            <ci> D </ci>
+                          </apply>
+                        </apply>
+                        <apply>
+                          <power/>
+                          <ci> g7 </ci>
+                          <ci> s </ci>
+                        </apply>
+                      </apply>
+                      <apply>
+                        <plus/>
+                        <apply>
+                          <power/>
+                          <ci> cT </ci>
+                          <ci> s </ci>
+                        </apply>
+                        <apply>
+                          <power/>
+                          <ci> g7 </ci>
+                          <ci> s </ci>
+                        </apply>
+                      </apply>
+                    </apply>
+                    <apply>
+                      <power/>
+                      <ci> g16 </ci>
+                      <ci> g </ci>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <plus/>
+                    <apply>
+                      <power/>
+                      <ci> cL </ci>
+                      <ci> g </ci>
+                    </apply>
+                    <apply>
+                      <power/>
+                      <ci> g16 </ci>
+                      <ci> g </ci>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+              <ci> def </ci>
+            </apply>
+          </lambda>
+        </math>
+            </functionDefinition>
+      <functionDefinition id="function_4_cT_m_trscr" name="function_4_cT_m_trscr" metaid="metaid_0000010">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <lambda>
+            <bvar>
+              <ci> cL </ci>
+            </bvar>
+            <bvar>
+              <ci> cY </ci>
+            </bvar>
+            <bvar>
+              <ci> d </ci>
+            </bvar>
+            <bvar>
+              <ci> def </ci>
+            </bvar>
+            <bvar>
+              <ci> e </ci>
+            </bvar>
+            <bvar>
+              <ci> g4 </ci>
+            </bvar>
+            <bvar>
+              <ci> g5 </ci>
+            </bvar>
+            <bvar>
+              <ci> n2 </ci>
+            </bvar>
+            <bvar>
+              <ci> n3 </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <apply>
+                    <plus/>
+                    <apply>
+                      <divide/>
+                      <apply>
+                        <times/>
+                        <ci> n2 </ci>
+                        <apply>
+                          <power/>
+                          <ci> cY </ci>
+                          <ci> d </ci>
+                        </apply>
+                      </apply>
+                      <apply>
+                        <plus/>
+                        <apply>
+                          <power/>
+                          <ci> cY </ci>
+                          <ci> d </ci>
+                        </apply>
+                        <apply>
+                          <power/>
+                          <ci> g4 </ci>
+                          <ci> d </ci>
+                        </apply>
+                      </apply>
+                    </apply>
+                    <ci> n3 </ci>
+                  </apply>
+                  <apply>
+                    <power/>
+                    <ci> g5 </ci>
+                    <ci> e </ci>
+                  </apply>
+                </apply>
+                <apply>
+                  <plus/>
+                  <apply>
+                    <power/>
+                    <ci> cL </ci>
+                    <ci> e </ci>
+                  </apply>
+                  <apply>
+                    <power/>
+                    <ci> g5 </ci>
+                    <ci> e </ci>
+                  </apply>
+                </apply>
+              </apply>
+              <ci> def </ci>
+            </apply>
+          </lambda>
+        </math>
+            </functionDefinition>
+      <functionDefinition id="function_4_cT_m_degr" name="function_4_cT_m_degr" metaid="metaid_0000011">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <lambda>
+            <bvar>
+              <ci> cT_m </ci>
+            </bvar>
+            <bvar>
+              <ci> def </ci>
+            </bvar>
+            <bvar>
+              <ci> m5 </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> m5 </ci>
+                <ci> cT_m </ci>
+              </apply>
+              <ci> def </ci>
+            </apply>
+          </lambda>
+        </math>
+            </functionDefinition>
+      <functionDefinition id="function_4_cNI_trsl" name="function_4_cNI_trsl" metaid="metaid_0000012">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <lambda>
+            <bvar>
+              <ci> cNI_m </ci>
+            </bvar>
+            <bvar>
+              <ci> def </ci>
+            </bvar>
+            <bvar>
+              <ci> p10 </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> p10 </ci>
+                <ci> cNI_m </ci>
+              </apply>
+              <ci> def </ci>
+            </apply>
+          </lambda>
+        </math>
+            </functionDefinition>
+      <functionDefinition id="function_4_cZTL_trsl" name="function_4_cZTL_trsl" metaid="metaid_0000013">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <lambda>
+            <bvar>
+              <ci> def </ci>
+            </bvar>
+            <bvar>
+              <ci> p14 </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <ci> p14 </ci>
+              <ci> def </ci>
+            </apply>
+          </lambda>
+        </math>
+            </functionDefinition>
+      <functionDefinition id="function_4_cP7_m_degr" name="function_4_cP7_m_degr" metaid="metaid_0000014">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <lambda>
+            <bvar>
+              <ci> cP7_m </ci>
+            </bvar>
+            <bvar>
+              <ci> def </ci>
+            </bvar>
+            <bvar>
+              <ci> m14 </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> m14 </ci>
+                <ci> cP7_m </ci>
+              </apply>
+              <ci> def </ci>
+            </apply>
+          </lambda>
+        </math>
+            </functionDefinition>
+      <functionDefinition id="function_4_cY_m_degr" name="function_4_cY_m_degr" metaid="metaid_0000015">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <lambda>
+            <bvar>
+              <ci> cY_m </ci>
+            </bvar>
+            <bvar>
+              <ci> def </ci>
+            </bvar>
+            <bvar>
+              <ci> m9 </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> m9 </ci>
+                <ci> cY_m </ci>
+              </apply>
+              <ci> def </ci>
+            </apply>
+          </lambda>
+        </math>
+            </functionDefinition>
+      <functionDefinition id="function_4_cLm_degr" name="function_4_cLm_degr" metaid="metaid_0000016">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <lambda>
+            <bvar>
+              <ci> cLm </ci>
+            </bvar>
+            <bvar>
+              <ci> def </ci>
+            </bvar>
+            <bvar>
+              <ci> m4 </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> m4 </ci>
+                <ci> cLm </ci>
+              </apply>
+              <ci> def </ci>
+            </apply>
+          </lambda>
+        </math>
+            </functionDefinition>
+      <functionDefinition id="function_4_cL_modif" name="function_4_cL_modif" metaid="metaid_0000017">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <lambda>
+            <bvar>
+              <ci> c </ci>
+            </bvar>
+            <bvar>
+              <ci> cL </ci>
+            </bvar>
+            <bvar>
+              <ci> def </ci>
+            </bvar>
+            <bvar>
+              <ci> g3 </ci>
+            </bvar>
+            <bvar>
+              <ci> p3 </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <ci> p3 </ci>
+                  <apply>
+                    <power/>
+                    <ci> cL </ci>
+                    <ci> c </ci>
+                  </apply>
+                </apply>
+                <apply>
+                  <plus/>
+                  <apply>
+                    <power/>
+                    <ci> cL </ci>
+                    <ci> c </ci>
+                  </apply>
+                  <apply>
+                    <power/>
+                    <ci> g3 </ci>
+                    <ci> c </ci>
+                  </apply>
+                </apply>
+              </apply>
+              <ci> def </ci>
+            </apply>
+          </lambda>
+        </math>
+            </functionDefinition>
+      <functionDefinition id="function_4_cL_degr" name="function_4_cL_degr" metaid="metaid_0000018">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <lambda>
+            <bvar>
+              <ci> c </ci>
+            </bvar>
+            <bvar>
+              <ci> cL </ci>
+            </bvar>
+            <bvar>
+              <ci> def </ci>
+            </bvar>
+            <bvar>
+              <ci> g3 </ci>
+            </bvar>
+            <bvar>
+              <ci> m3 </ci>
+            </bvar>
+            <bvar>
+              <ci> p3 </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <plus/>
+                <apply>
+                  <times/>
+                  <ci> m3 </ci>
+                  <ci> cL </ci>
+                </apply>
+                <apply>
+                  <divide/>
+                  <apply>
+                    <times/>
+                    <ci> p3 </ci>
+                    <apply>
+                      <power/>
+                      <ci> cL </ci>
+                      <ci> c </ci>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <plus/>
+                    <apply>
+                      <power/>
+                      <ci> cL </ci>
+                      <ci> c </ci>
+                    </apply>
+                    <apply>
+                      <power/>
+                      <ci> g3 </ci>
+                      <ci> c </ci>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+              <ci> def </ci>
+            </apply>
+          </lambda>
+        </math>
+            </functionDefinition>
+      <functionDefinition id="function_4_cL_trsl" name="function_4_cL_trsl" metaid="metaid_0000019">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <lambda>
+            <bvar>
+              <ci> D </ci>
+            </bvar>
+            <bvar>
+              <ci> L </ci>
+            </bvar>
+            <bvar>
+              <ci> cL_m </ci>
+            </bvar>
+            <bvar>
+              <ci> def </ci>
+            </bvar>
+            <bvar>
+              <ci> p1 </ci>
+            </bvar>
+            <bvar>
+              <ci> p2 </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> cL_m </ci>
+                <apply>
+                  <plus/>
+                  <apply>
+                    <times/>
+                    <ci> p1 </ci>
+                    <ci> L </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> p2 </ci>
+                    <ci> D </ci>
+                  </apply>
+                </apply>
+              </apply>
+              <ci> def </ci>
+            </apply>
+          </lambda>
+        </math>
+            </functionDefinition>
+      <functionDefinition id="function_4_cP9_m_degr" name="function_4_cP9_m_degr" metaid="metaid_0000020">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <lambda>
+            <bvar>
+              <ci> cP9_m </ci>
+            </bvar>
+            <bvar>
+              <ci> def </ci>
+            </bvar>
+            <bvar>
+              <ci> m12 </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> m12 </ci>
+                <ci> cP9_m </ci>
+              </apply>
+              <ci> def </ci>
+            </apply>
+          </lambda>
+        </math>
+            </functionDefinition>
+      <functionDefinition id="function_4_cY_degr" name="function_4_cY_degr" metaid="metaid_0000021">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <lambda>
+            <bvar>
+              <ci> cY </ci>
+            </bvar>
+            <bvar>
+              <ci> def </ci>
+            </bvar>
+            <bvar>
+              <ci> m10 </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> m10 </ci>
+                <ci> cY </ci>
+              </apply>
+              <ci> def </ci>
+            </apply>
+          </lambda>
+        </math>
+            </functionDefinition>
+      <functionDefinition id="function_4_cP_degr" name="function_4_cP_degr" metaid="metaid_0000022">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <lambda>
+            <bvar>
+              <ci> L </ci>
+            </bvar>
+            <bvar>
+              <ci> cP </ci>
+            </bvar>
+            <bvar>
+              <ci> def </ci>
+            </bvar>
+            <bvar>
+              <ci> m11 </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> m11 </ci>
+                <ci> cP </ci>
+                <ci> L </ci>
+              </apply>
+              <ci> def </ci>
+            </apply>
+          </lambda>
+        </math>
+            </functionDefinition>
+      <functionDefinition id="function_4_cTm_degr" name="function_4_cTm_degr" metaid="metaid_0000023">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <lambda>
+            <bvar>
+              <ci> D </ci>
+            </bvar>
+            <bvar>
+              <ci> L </ci>
+            </bvar>
+            <bvar>
+              <ci> cTm </ci>
+            </bvar>
+            <bvar>
+              <ci> def </ci>
+            </bvar>
+            <bvar>
+              <ci> m25 </ci>
+            </bvar>
+            <bvar>
+              <ci> m26 </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <apply>
+                  <plus/>
+                  <apply>
+                    <times/>
+                    <ci> m25 </ci>
+                    <ci> L </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> m26 </ci>
+                    <ci> D </ci>
+                  </apply>
+                </apply>
+                <ci> cTm </ci>
+              </apply>
+              <ci> def </ci>
+            </apply>
+          </lambda>
+        </math>
+            </functionDefinition>
+      <functionDefinition id="function_4_cP_trsl" name="function_4_cP_trsl" metaid="metaid_0000024">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <lambda>
+            <bvar>
+              <ci> D </ci>
+            </bvar>
+            <bvar>
+              <ci> cP </ci>
+            </bvar>
+            <bvar>
+              <ci> def </ci>
+            </bvar>
+            <bvar>
+              <ci> p7 </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> p7 </ci>
+                <ci> D </ci>
+                <apply>
+                  <minus/>
+                  <cn type="integer"> 1 </cn>
+                  <ci> cP </ci>
+                </apply>
+              </apply>
+              <ci> def </ci>
+            </apply>
+          </lambda>
+        </math>
+            </functionDefinition>
+      <functionDefinition id="function_4_cG_cZTL_assoc" name="function_4_cG_cZTL_assoc" metaid="metaid_0000025">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <lambda>
+            <bvar>
+              <ci> D </ci>
+            </bvar>
+            <bvar>
+              <ci> L </ci>
+            </bvar>
+            <bvar>
+              <ci> cG </ci>
+            </bvar>
+            <bvar>
+              <ci> cZG </ci>
+            </bvar>
+            <bvar>
+              <ci> cZTL </ci>
+            </bvar>
+            <bvar>
+              <ci> def </ci>
+            </bvar>
+            <bvar>
+              <ci> p12 </ci>
+            </bvar>
+            <bvar>
+              <ci> p13 </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <minus/>
+                <apply>
+                  <times/>
+                  <ci> p12 </ci>
+                  <ci> L </ci>
+                  <ci> cZTL </ci>
+                  <ci> cG </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> p13 </ci>
+                  <ci> D </ci>
+                  <ci> cZG </ci>
+                </apply>
+              </apply>
+              <ci> def </ci>
+            </apply>
+          </lambda>
+        </math>
+            </functionDefinition>
+      <functionDefinition id="function_4_cG_m_trscr" name="function_4_cG_m_trscr" metaid="metaid_0000026">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <lambda>
+            <bvar>
+              <ci> L </ci>
+            </bvar>
+            <bvar>
+              <ci> cL </ci>
+            </bvar>
+            <bvar>
+              <ci> cP </ci>
+            </bvar>
+            <bvar>
+              <ci> cT </ci>
+            </bvar>
+            <bvar>
+              <ci> def </ci>
+            </bvar>
+            <bvar>
+              <ci> g14 </ci>
+            </bvar>
+            <bvar>
+              <ci> g15 </ci>
+            </bvar>
+            <bvar>
+              <ci> n </ci>
+            </bvar>
+            <bvar>
+              <ci> n12 </ci>
+            </bvar>
+            <bvar>
+              <ci> o </ci>
+            </bvar>
+            <bvar>
+              <ci> q4 </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <plus/>
+                <apply>
+                  <times/>
+                  <ci> L </ci>
+                  <ci> q4 </ci>
+                  <ci> cP </ci>
+                </apply>
+                <apply>
+                  <divide/>
+                  <apply>
+                    <times/>
+                    <apply>
+                      <divide/>
+                      <apply>
+                        <times/>
+                        <ci> n12 </ci>
+                        <ci> L </ci>
+                        <apply>
+                          <power/>
+                          <ci> g15 </ci>
+                          <ci> o </ci>
+                        </apply>
+                      </apply>
+                      <apply>
+                        <plus/>
+                        <apply>
+                          <power/>
+                          <ci> cL </ci>
+                          <ci> o </ci>
+                        </apply>
+                        <apply>
+                          <power/>
+                          <ci> g15 </ci>
+                          <ci> o </ci>
+                        </apply>
+                      </apply>
+                    </apply>
+                    <apply>
+                      <power/>
+                      <ci> g14 </ci>
+                      <ci> n </ci>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <plus/>
+                    <apply>
+                      <power/>
+                      <ci> cT </ci>
+                      <ci> n </ci>
+                    </apply>
+                    <apply>
+                      <power/>
+                      <ci> g14 </ci>
+                      <ci> n </ci>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+              <ci> def </ci>
+            </apply>
+          </lambda>
+        </math>
+            </functionDefinition>
+      <functionDefinition id="function_4_cG_degr" name="function_4_cG_degr" metaid="metaid_0000027">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <lambda>
+            <bvar>
+              <ci> cG </ci>
+            </bvar>
+            <bvar>
+              <ci> def </ci>
+            </bvar>
+            <bvar>
+              <ci> m19 </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> m19 </ci>
+                <ci> cG </ci>
+              </apply>
+              <ci> def </ci>
+            </apply>
+          </lambda>
+        </math>
+            </functionDefinition>
+      <functionDefinition id="function_4_cZG_degr" name="function_4_cZG_degr" metaid="metaid_0000028">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <lambda>
+            <bvar>
+              <ci> cZG </ci>
+            </bvar>
+            <bvar>
+              <ci> def </ci>
+            </bvar>
+            <bvar>
+              <ci> m21 </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> m21 </ci>
+                <ci> cZG </ci>
+              </apply>
+              <ci> def </ci>
+            </apply>
+          </lambda>
+        </math>
+            </functionDefinition>
+      <functionDefinition id="function_4_cL_m_trscr" name="function_4_cL_m_trscr" metaid="metaid_0000029">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <lambda>
+            <bvar>
+              <ci> L </ci>
+            </bvar>
+            <bvar>
+              <ci> a </ci>
+            </bvar>
+            <bvar>
+              <ci> b </ci>
+            </bvar>
+            <bvar>
+              <ci> cNI </ci>
+            </bvar>
+            <bvar>
+              <ci> cP </ci>
+            </bvar>
+            <bvar>
+              <ci> cP7 </ci>
+            </bvar>
+            <bvar>
+              <ci> cP9 </ci>
+            </bvar>
+            <bvar>
+              <ci> cTm </ci>
+            </bvar>
+            <bvar>
+              <ci> def </ci>
+            </bvar>
+            <bvar>
+              <ci> g1 </ci>
+            </bvar>
+            <bvar>
+              <ci> g2 </ci>
+            </bvar>
+            <bvar>
+              <ci> n0 </ci>
+            </bvar>
+            <bvar>
+              <ci> n1 </ci>
+            </bvar>
+            <bvar>
+              <ci> q1 </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <apply>
+                    <plus/>
+                    <apply>
+                      <times/>
+                      <ci> n0 </ci>
+                      <ci> L </ci>
+                    </apply>
+                    <apply>
+                      <times/>
+                      <ci> L </ci>
+                      <ci> q1 </ci>
+                      <ci> cP </ci>
+                    </apply>
+                    <apply>
+                      <divide/>
+                      <apply>
+                        <times/>
+                        <ci> n1 </ci>
+                        <apply>
+                          <power/>
+                          <ci> cTm </ci>
+                          <ci> b </ci>
+                        </apply>
+                      </apply>
+                      <apply>
+                        <plus/>
+                        <apply>
+                          <power/>
+                          <ci> cTm </ci>
+                          <ci> b </ci>
+                        </apply>
+                        <apply>
+                          <power/>
+                          <ci> g2 </ci>
+                          <ci> b </ci>
+                        </apply>
+                      </apply>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <power/>
+                    <ci> g1 </ci>
+                    <ci> a </ci>
+                  </apply>
+                </apply>
+                <apply>
+                  <plus/>
+                  <apply>
+                    <power/>
+                    <apply>
+                      <plus/>
+                      <ci> cP9 </ci>
+                      <ci> cP7 </ci>
+                      <ci> cNI </ci>
+                    </apply>
+                    <ci> a </ci>
+                  </apply>
+                  <apply>
+                    <power/>
+                    <ci> g1 </ci>
+                    <ci> a </ci>
+                  </apply>
+                </apply>
+              </apply>
+              <ci> def </ci>
+            </apply>
+          </lambda>
+        </math>
+            </functionDefinition>
+      <functionDefinition id="function_4_cL_m_degr" name="function_4_cL_m_degr" metaid="metaid_0000030">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <lambda>
+            <bvar>
+              <ci> D </ci>
+            </bvar>
+            <bvar>
+              <ci> L </ci>
+            </bvar>
+            <bvar>
+              <ci> cL_m </ci>
+            </bvar>
+            <bvar>
+              <ci> def </ci>
+            </bvar>
+            <bvar>
+              <ci> m1 </ci>
+            </bvar>
+            <bvar>
+              <ci> m2 </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <apply>
+                  <plus/>
+                  <apply>
+                    <times/>
+                    <ci> m1 </ci>
+                    <ci> L </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> m2 </ci>
+                    <ci> D </ci>
+                  </apply>
+                </apply>
+                <ci> cL_m </ci>
+              </apply>
+              <ci> def </ci>
+            </apply>
+          </lambda>
+        </math>
+            </functionDefinition>
+      <functionDefinition id="function_4_cG_trsl" name="function_4_cG_trsl" metaid="metaid_0000031">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <lambda>
+            <bvar>
+              <ci> cG_m </ci>
+            </bvar>
+            <bvar>
+              <ci> def </ci>
+            </bvar>
+            <bvar>
+              <ci> p11 </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> p11 </ci>
+                <ci> cG_m </ci>
+              </apply>
+              <ci> def </ci>
+            </apply>
+          </lambda>
+        </math>
+            </functionDefinition>
+      <functionDefinition id="function_4_cP9_m_trscr" name="function_4_cP9_m_trscr" metaid="metaid_0000032">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <lambda>
+            <bvar>
+              <ci> L </ci>
+            </bvar>
+            <bvar>
+              <ci> cL </ci>
+            </bvar>
+            <bvar>
+              <ci> cP </ci>
+            </bvar>
+            <bvar>
+              <ci> cT </ci>
+            </bvar>
+            <bvar>
+              <ci> def </ci>
+            </bvar>
+            <bvar>
+              <ci> g8 </ci>
+            </bvar>
+            <bvar>
+              <ci> g9 </ci>
+            </bvar>
+            <bvar>
+              <ci> h </ci>
+            </bvar>
+            <bvar>
+              <ci> i </ci>
+            </bvar>
+            <bvar>
+              <ci> n4 </ci>
+            </bvar>
+            <bvar>
+              <ci> n7 </ci>
+            </bvar>
+            <bvar>
+              <ci> q3 </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <plus/>
+                <apply>
+                  <times/>
+                  <ci> L </ci>
+                  <ci> q3 </ci>
+                  <ci> cP </ci>
+                </apply>
+                <apply>
+                  <divide/>
+                  <apply>
+                    <times/>
+                    <apply>
+                      <plus/>
+                      <apply>
+                        <times/>
+                        <ci> n4 </ci>
+                        <ci> L </ci>
+                      </apply>
+                      <apply>
+                        <divide/>
+                        <apply>
+                          <times/>
+                          <ci> n7 </ci>
+                          <apply>
+                            <power/>
+                            <ci> cL </ci>
+                            <ci> i </ci>
+                          </apply>
+                        </apply>
+                        <apply>
+                          <plus/>
+                          <apply>
+                            <power/>
+                            <ci> cL </ci>
+                            <ci> i </ci>
+                          </apply>
+                          <apply>
+                            <power/>
+                            <ci> g9 </ci>
+                            <ci> i </ci>
+                          </apply>
+                        </apply>
+                      </apply>
+                    </apply>
+                    <apply>
+                      <power/>
+                      <ci> g8 </ci>
+                      <ci> h </ci>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <plus/>
+                    <apply>
+                      <power/>
+                      <ci> cT </ci>
+                      <ci> h </ci>
+                    </apply>
+                    <apply>
+                      <power/>
+                      <ci> g8 </ci>
+                      <ci> h </ci>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+              <ci> def </ci>
+            </apply>
+          </lambda>
+        </math>
+            </functionDefinition>
+      <functionDefinition id="function_4_cP9_degr" name="function_4_cP9_degr" metaid="metaid_0000033">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <lambda>
+            <bvar>
+              <ci> D </ci>
+            </bvar>
+            <bvar>
+              <ci> L </ci>
+            </bvar>
+            <bvar>
+              <ci> cP9 </ci>
+            </bvar>
+            <bvar>
+              <ci> def </ci>
+            </bvar>
+            <bvar>
+              <ci> m13 </ci>
+            </bvar>
+            <bvar>
+              <ci> m22 </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <apply>
+                  <plus/>
+                  <apply>
+                    <times/>
+                    <ci> m13 </ci>
+                    <ci> L </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> m22 </ci>
+                    <ci> D </ci>
+                  </apply>
+                </apply>
+                <ci> cP9 </ci>
+              </apply>
+              <ci> def </ci>
+            </apply>
+          </lambda>
+        </math>
+            </functionDefinition>
+      <functionDefinition id="function_4_cP7_trsl" name="function_4_cP7_trsl" metaid="metaid_0000034">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <lambda>
+            <bvar>
+              <ci> cP7_m </ci>
+            </bvar>
+            <bvar>
+              <ci> def </ci>
+            </bvar>
+            <bvar>
+              <ci> p9 </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> p9 </ci>
+                <ci> cP7_m </ci>
+              </apply>
+              <ci> def </ci>
+            </apply>
+          </lambda>
+        </math>
+            </functionDefinition>
+      <functionDefinition id="function_4_cP7_m_trscr" name="function_4_cP7_m_trscr" metaid="metaid_0000035">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <lambda>
+            <bvar>
+              <ci> cL </ci>
+            </bvar>
+            <bvar>
+              <ci> cLm </ci>
+            </bvar>
+            <bvar>
+              <ci> cP9 </ci>
+            </bvar>
+            <bvar>
+              <ci> def </ci>
+            </bvar>
+            <bvar>
+              <ci> g10 </ci>
+            </bvar>
+            <bvar>
+              <ci> g11 </ci>
+            </bvar>
+            <bvar>
+              <ci> j </ci>
+            </bvar>
+            <bvar>
+              <ci> k </ci>
+            </bvar>
+            <bvar>
+              <ci> n8 </ci>
+            </bvar>
+            <bvar>
+              <ci> n9 </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <plus/>
+                <apply>
+                  <divide/>
+                  <apply>
+                    <times/>
+                    <ci> n8 </ci>
+                    <apply>
+                      <power/>
+                      <apply>
+                        <plus/>
+                        <ci> cLm </ci>
+                        <ci> cL </ci>
+                      </apply>
+                      <ci> j </ci>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <plus/>
+                    <apply>
+                      <power/>
+                      <apply>
+                        <plus/>
+                        <ci> cLm </ci>
+                        <ci> cL </ci>
+                      </apply>
+                      <ci> j </ci>
+                    </apply>
+                    <apply>
+                      <power/>
+                      <ci> g10 </ci>
+                      <ci> j </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <divide/>
+                  <apply>
+                    <times/>
+                    <ci> n9 </ci>
+                    <apply>
+                      <power/>
+                      <ci> cP9 </ci>
+                      <ci> k </ci>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <plus/>
+                    <apply>
+                      <power/>
+                      <ci> cP9 </ci>
+                      <ci> k </ci>
+                    </apply>
+                    <apply>
+                      <power/>
+                      <ci> g11 </ci>
+                      <ci> k </ci>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+              <ci> def </ci>
+            </apply>
+          </lambda>
+        </math>
+            </functionDefinition>
+      <functionDefinition id="function_4_cNI_degr" name="function_4_cNI_degr" metaid="metaid_0000036">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <lambda>
+            <bvar>
+              <ci> D </ci>
+            </bvar>
+            <bvar>
+              <ci> L </ci>
+            </bvar>
+            <bvar>
+              <ci> cNI </ci>
+            </bvar>
+            <bvar>
+              <ci> def </ci>
+            </bvar>
+            <bvar>
+              <ci> m17 </ci>
+            </bvar>
+            <bvar>
+              <ci> m24 </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <apply>
+                  <plus/>
+                  <apply>
+                    <times/>
+                    <ci> m17 </ci>
+                    <ci> L </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> m24 </ci>
+                    <ci> D </ci>
+                  </apply>
+                </apply>
+                <ci> cNI </ci>
+              </apply>
+              <ci> def </ci>
+            </apply>
+          </lambda>
+        </math>
+            </functionDefinition>
+      <functionDefinition id="function_4_cG_m_degr" name="function_4_cG_m_degr" metaid="metaid_0000037">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <lambda>
+            <bvar>
+              <ci> cG_m </ci>
+            </bvar>
+            <bvar>
+              <ci> def </ci>
+            </bvar>
+            <bvar>
+              <ci> m18 </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> m18 </ci>
+                <ci> cG_m </ci>
+              </apply>
+              <ci> def </ci>
+            </apply>
+          </lambda>
+        </math>
+            </functionDefinition>
+      <functionDefinition id="function_4_cP9_trsl" name="function_4_cP9_trsl" metaid="metaid_0000038">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <lambda>
+            <bvar>
+              <ci> cP9_m </ci>
+            </bvar>
+            <bvar>
+              <ci> def </ci>
+            </bvar>
+            <bvar>
+              <ci> p8 </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> p8 </ci>
+                <ci> cP9_m </ci>
+              </apply>
+              <ci> def </ci>
+            </apply>
+          </lambda>
+        </math>
+            </functionDefinition>
+      <functionDefinition id="function_4_cZTL_degr" name="function_4_cZTL_degr" metaid="metaid_0000039">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <lambda>
+            <bvar>
+              <ci> cZTL </ci>
+            </bvar>
+            <bvar>
+              <ci> def </ci>
+            </bvar>
+            <bvar>
+              <ci> m20 </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> m20 </ci>
+                <ci> cZTL </ci>
+              </apply>
+              <ci> def </ci>
+            </apply>
+          </lambda>
+        </math>
+            </functionDefinition>
+      <functionDefinition id="function_4_cT_modif" name="function_4_cT_modif" metaid="metaid_0000040">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <lambda>
+            <bvar>
+              <ci> cT </ci>
+            </bvar>
+            <bvar>
+              <ci> def </ci>
+            </bvar>
+            <bvar>
+              <ci> f </ci>
+            </bvar>
+            <bvar>
+              <ci> g6 </ci>
+            </bvar>
+            <bvar>
+              <ci> p15 </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <ci> p15 </ci>
+                  <apply>
+                    <power/>
+                    <ci> cT </ci>
+                    <ci> f </ci>
+                  </apply>
+                </apply>
+                <apply>
+                  <plus/>
+                  <apply>
+                    <power/>
+                    <ci> cT </ci>
+                    <ci> f </ci>
+                  </apply>
+                  <apply>
+                    <power/>
+                    <ci> g6 </ci>
+                    <ci> f </ci>
+                  </apply>
+                </apply>
+              </apply>
+              <ci> def </ci>
+            </apply>
+          </lambda>
+        </math>
+            </functionDefinition>
+    </listOfFunctionDefinitions>
+    <listOfUnitDefinitions>
+      <unitDefinition id="substance" metaid="metaid_0000042">
+        <listOfUnits>
+          <unit metaid="e1b9c22f-7191-493e-abbe-e911a71781d9" kind="item"/>
+        </listOfUnits>
+      </unitDefinition>
+    </listOfUnitDefinitions>
+    <listOfCompartments>
+      <compartment id="def" name="def" metaid="metaid_0000142" sboTerm="SBO:0000290" size="1">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqmodel="http://biomodels.net/model-qualifiers/" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#metaid_0000142">
+	<bqbiol:isVersionOf>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/go/GO:0005623"/>
+	</rdf:Bag>
+	</bqbiol:isVersionOf>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+            </compartment>
+    </listOfCompartments>
+    <listOfSpecies>
+      <species id="cG" initialConcentration="0.0238" name="cG" metaid="metaid_0000143" sboTerm="SBO:0000245" compartment="def">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqmodel="http://biomodels.net/model-qualifiers/" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#metaid_0000143">
+	<bqbiol:isVersionOf>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/uniprot/Q9SQI2"/>
+	</rdf:Bag>
+	</bqbiol:isVersionOf>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+            </species>
+      <species id="cG_m" initialConcentration="0.119" name="cG_m" metaid="metaid_0000144" sboTerm="SBO:0000278" compartment="def">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqmodel="http://biomodels.net/model-qualifiers/" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#metaid_0000144">
+	<bqbiol:isVersionOf>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/chebi/CHEBI:33699"/>
+	</rdf:Bag>
+	</bqbiol:isVersionOf>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+            </species>
+      <species id="cL" initialConcentration="0.416" name="cL" metaid="metaid_0000145" sboTerm="SBO:0000245" compartment="def">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqmodel="http://biomodels.net/model-qualifiers/" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#metaid_0000145">
+	<bqbiol:isVersionOf>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/uniprot/P92973"/>
+	<rdf:li rdf:resource="http://identifiers.org/uniprot/Q6R0H1"/>
+	</rdf:Bag>
+	</bqbiol:isVersionOf>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+            </species>
+      <species id="cL_m" initialConcentration="1" name="cL_m" metaid="metaid_0000146" sboTerm="SBO:0000278" compartment="def">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqmodel="http://biomodels.net/model-qualifiers/" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#metaid_0000146">
+	<bqbiol:isVersionOf>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/chebi/CHEBI:33699"/>
+	</rdf:Bag>
+	</bqbiol:isVersionOf>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+            </species>
+      <species id="cLm" initialConcentration="0.054" name="cLm" metaid="metaid_0000147" sboTerm="SBO:0000245" compartment="def">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqmodel="http://biomodels.net/model-qualifiers/" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#metaid_0000147">
+              <bqbiol:isVersionOf>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/uniprot/P92973"/>
+	<rdf:li rdf:resource="http://identifiers.org/uniprot/Q6R0H1"/>
+	</rdf:Bag>
+	</bqbiol:isVersionOf>
+	
+	<bqbiol:isVersionOf>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/psimod/MOD:00000"/>
+	</rdf:Bag>
+	</bqbiol:isVersionOf>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+            </species>
+      <species id="cNI" initialConcentration="0.044" name="cNI" metaid="metaid_0000148" sboTerm="SBO:0000020" compartment="def">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqmodel="http://biomodels.net/model-qualifiers/" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#metaid_0000148">
+	<bqbiol:isVersionOf>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/chebi/CHEBI:35222"/>
+	</rdf:Bag>
+	</bqbiol:isVersionOf>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+            </species>
+      <species id="cNI_m" initialConcentration="0.0065" name="cNI_m" metaid="metaid_0000149" sboTerm="SBO:0000278" compartment="def">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqmodel="http://biomodels.net/model-qualifiers/" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#metaid_0000149">
+	<bqbiol:isVersionOf>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/chebi/CHEBI:35222"/>
+	<rdf:li rdf:resource="http://identifiers.org/chebi/CHEBI:33699"/>
+	</rdf:Bag>
+	</bqbiol:isVersionOf>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+            </species>
+      <species id="cP" initialConcentration="0.825" name="cP" metaid="metaid_0000150" sboTerm="SBO:0000245" compartment="def"/>
+      <species id="cP7" initialConcentration="0.019" name="cP7" metaid="metaid_0000151" sboTerm="SBO:0000245" compartment="def">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqmodel="http://biomodels.net/model-qualifiers/" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#metaid_0000151">
+	<bqbiol:isVersionOf>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/uniprot/Q93WK5"/>
+	</rdf:Bag>
+	</bqbiol:isVersionOf>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+            </species>
+      <species id="cP7_m" initialConcentration="0.075" name="cP7_m" metaid="metaid_0000152" sboTerm="SBO:0000278" compartment="def">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqmodel="http://biomodels.net/model-qualifiers/" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#metaid_0000152">
+	<bqbiol:isVersionOf>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/chebi/CHEBI:33699"/>
+	</rdf:Bag>
+	</bqbiol:isVersionOf>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+            </species>
+      <species id="cP9" initialConcentration="0.056" name="cP9" metaid="metaid_0000153" sboTerm="SBO:0000245" compartment="def">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqmodel="http://biomodels.net/model-qualifiers/" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#metaid_0000153">
+	<bqbiol:isVersionOf>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/uniprot/Q8L500"/>
+	</rdf:Bag>
+	</bqbiol:isVersionOf>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+            </species>
+      <species id="cP9_m" initialConcentration="0.35" name="cP9_m" metaid="metaid_0000154" sboTerm="SBO:0000278" compartment="def">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqmodel="http://biomodels.net/model-qualifiers/" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#metaid_0000154">
+	<bqbiol:isPartOf>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/chebi/CHEBI:33699"/>
+	</rdf:Bag>
+	</bqbiol:isPartOf>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+            </species>
+      <species id="cT" initialConcentration="0.393" name="cT" metaid="metaid_0000155" sboTerm="SBO:0000245" compartment="def">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqmodel="http://biomodels.net/model-qualifiers/" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#metaid_0000155">
+	<bqbiol:isVersionOf>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/uniprot/Q9LKL2"/>
+	</rdf:Bag>
+	</bqbiol:isVersionOf>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+            </species>
+      <species id="cT_m" initialConcentration="0.25" name="cT_m" metaid="metaid_0000156" sboTerm="SBO:0000278" compartment="def">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqmodel="http://biomodels.net/model-qualifiers/" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#metaid_0000156">
+	<bqbiol:isVersionOf>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/chebi/CHEBI:33699"/>
+	</rdf:Bag>
+	</bqbiol:isVersionOf>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+            </species>
+      <species id="cTm" initialConcentration="0.24" name="cTm" metaid="metaid_0000157" sboTerm="SBO:0000245" compartment="def">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqmodel="http://biomodels.net/model-qualifiers/" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#metaid_0000157">
+              <bqbiol:isVersionOf>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/uniprot/Q9LKL2"/>
+	</rdf:Bag>
+	</bqbiol:isVersionOf>
+	
+	<bqbiol:isVersionOf>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/psimod/MOD:00000"/>
+	</rdf:Bag>
+	</bqbiol:isVersionOf>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+            </species>
+      <species id="cY" initialConcentration="0.1" name="cY" metaid="metaid_0000158" sboTerm="SBO:0000245" compartment="def">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqmodel="http://biomodels.net/model-qualifiers/" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#metaid_0000158">
+	<bqbiol:isVersionOf>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/chebi/CHEBI:36080"/>
+	</rdf:Bag>
+	</bqbiol:isVersionOf>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+            </species>
+      <species id="cY_m" initialConcentration="0.093" name="cY_m" metaid="metaid_0000159" sboTerm="SBO:0000278" compartment="def">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqmodel="http://biomodels.net/model-qualifiers/" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#metaid_0000159">
+	<bqmodel:is>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/chebi/CHEBI:33699"/>
+	<rdf:li rdf:resource="http://identifiers.org/kegg.compound/C00046"/>
+	</rdf:Bag>
+	</bqmodel:is>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+            </species>
+      <species id="cZG" initialConcentration="0.0774" name="cZG" metaid="metaid_0000160" sboTerm="SBO:0000296" compartment="def">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqmodel="http://biomodels.net/model-qualifiers/" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#metaid_0000160">
+	<bqbiol:hasPart>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/uniprot/Q9SQI2"/>
+	<rdf:li rdf:resource="http://identifiers.org/uniprot/Q94BT6"/>
+	</rdf:Bag>
+	</bqbiol:hasPart>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+            </species>
+      <species id="cZTL" initialConcentration="0.323" name="cZTL" metaid="metaid_0000161" sboTerm="SBO:0000245" compartment="def">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqmodel="http://biomodels.net/model-qualifiers/" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#metaid_0000161">
+	<bqbiol:isVersionOf>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/uniprot/Q94BT6"/>
+	</rdf:Bag>
+	</bqbiol:isVersionOf>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+            </species>
+    </listOfSpecies>
+    <listOfParameters>
+      <parameter id="n0" name="n0" metaid="metaid_0000043" value="0.4" sboTerm="SBO:0000009"/>
+      <parameter id="n1" name="n1" metaid="metaid_0000044" value="1.8" sboTerm="SBO:0000009"/>
+      <parameter id="n2" name="n2" metaid="metaid_0000045" value="0.7" sboTerm="SBO:0000009"/>
+      <parameter id="n3" name="n3" metaid="metaid_0000046" value="0.06" sboTerm="SBO:0000009"/>
+      <parameter id="n4" name="n4" metaid="metaid_0000047" value="0" sboTerm="SBO:0000009"/>
+      <parameter id="n5" name="n5" metaid="metaid_0000048" value="3.4" sboTerm="SBO:0000009"/>
+      <parameter id="n6" name="n6" metaid="metaid_0000049" value="1.25" sboTerm="SBO:0000009"/>
+      <parameter id="n7" name="n7" metaid="metaid_0000050" value="0.2" sboTerm="SBO:0000009"/>
+      <parameter id="n8" name="n8" metaid="metaid_0000051" value="0.42" sboTerm="SBO:0000009"/>
+      <parameter id="n9" name="n9" metaid="metaid_0000052" value="0.26" sboTerm="SBO:0000009"/>
+      <parameter id="n10" name="n10" metaid="metaid_0000053" value="0.18" sboTerm="SBO:0000009"/>
+      <parameter id="n11" name="n11" metaid="metaid_0000054" value="0.71" sboTerm="SBO:0000009"/>
+      <parameter id="n12" name="n12" metaid="metaid_0000055" value="2.3" sboTerm="SBO:0000009"/>
+      <parameter id="g1" name="g1" metaid="metaid_0000056" value="0.1" sboTerm="SBO:0000027"/>
+      <parameter id="g2" name="g2" metaid="metaid_0000057" value="0.28" sboTerm="SBO:0000027"/>
+      <parameter id="g3" name="g3" metaid="metaid_0000058" value="0.4" sboTerm="SBO:0000027"/>
+      <parameter id="g4" name="g4" metaid="metaid_0000059" value="0.91" sboTerm="SBO:0000027"/>
+      <parameter id="g5" name="g5" metaid="metaid_0000060" value="0.3" sboTerm="SBO:0000027"/>
+      <parameter id="g6" name="g6" metaid="metaid_0000061" value="0.3" sboTerm="SBO:0000027"/>
+      <parameter id="g7" name="g7" metaid="metaid_0000062" value="0.18" sboTerm="SBO:0000027"/>
+      <parameter id="g8" name="g8" metaid="metaid_0000063" value="0.14" sboTerm="SBO:0000027"/>
+      <parameter id="g9" name="g9" metaid="metaid_0000064" value="0.3" sboTerm="SBO:0000027"/>
+      <parameter id="g10" name="g10" metaid="metaid_0000065" value="0.7" sboTerm="SBO:0000027"/>
+      <parameter id="g11" name="g11" metaid="metaid_0000066" value="0.7" sboTerm="SBO:0000027"/>
+      <parameter id="g12" name="g12" metaid="metaid_0000067" value="0.5" sboTerm="SBO:0000027"/>
+      <parameter id="g13" name="g13" metaid="metaid_0000068" value="0.6" sboTerm="SBO:0000027"/>
+      <parameter id="g14" name="g14" metaid="metaid_0000069" value="0.17" sboTerm="SBO:0000027"/>
+      <parameter id="g15" name="g15" metaid="metaid_0000070" value="0.4" sboTerm="SBO:0000027"/>
+      <parameter id="g16" name="g16" metaid="metaid_0000071" value="0.2" sboTerm="SBO:0000027"/>
+      <parameter id="m1" name="m1" metaid="metaid_0000072" value="0.54" sboTerm="SBO:0000356"/>
+      <parameter id="m2" name="m2" metaid="metaid_0000073" value="0.24" sboTerm="SBO:0000356"/>
+      <parameter id="m3" name="m3" metaid="metaid_0000074" value="0.2" sboTerm="SBO:0000356"/>
+      <parameter id="m4" name="m4" metaid="metaid_0000075" value="0.2" sboTerm="SBO:0000356"/>
+      <parameter id="m5" name="m5" metaid="metaid_0000076" value="0.3" sboTerm="SBO:0000356"/>
+      <parameter id="m6" name="m6" metaid="metaid_0000077" value="0.25" sboTerm="SBO:0000356"/>
+      <parameter id="m7" name="m7" metaid="metaid_0000078" value="0.5" sboTerm="SBO:0000356"/>
+      <parameter id="m8" name="m8" metaid="metaid_0000079" value="0.1" sboTerm="SBO:0000356"/>
+      <parameter id="m9" name="m9" metaid="metaid_0000080" value="1" sboTerm="SBO:0000356"/>
+      <parameter id="m10" name="m10" metaid="metaid_0000081" value="0.3" sboTerm="SBO:0000356"/>
+      <parameter id="m11" name="m11" metaid="metaid_0000082" value="1" sboTerm="SBO:0000356"/>
+      <parameter id="m12" name="m12" metaid="metaid_0000083" value="1" sboTerm="SBO:0000356"/>
+      <parameter id="m13" name="m13" metaid="metaid_0000084" value="0.32" sboTerm="SBO:0000356"/>
+      <parameter id="m14" name="m14" metaid="metaid_0000085" value="0.28" sboTerm="SBO:0000356"/>
+      <parameter id="m15" name="m15" metaid="metaid_0000086" value="0.31" sboTerm="SBO:0000356"/>
+      <parameter id="m16" name="m16" metaid="metaid_0000087" value="0.5" sboTerm="SBO:0000356"/>
+      <parameter id="m17" name="m17" metaid="metaid_0000088" value="0.3" sboTerm="SBO:0000356"/>
+      <parameter id="m18" name="m18" metaid="metaid_0000089" value="1" sboTerm="SBO:0000356"/>
+      <parameter id="m19" name="m19" metaid="metaid_0000090" value="0.2" sboTerm="SBO:0000356"/>
+      <parameter id="m20" name="m20" metaid="metaid_0000091" value="1.2" sboTerm="SBO:0000356"/>
+      <parameter id="m21" name="m21" metaid="metaid_0000092" value="0.2" sboTerm="SBO:0000356"/>
+      <parameter id="m22" name="m22" metaid="metaid_0000093" value="2" sboTerm="SBO:0000356"/>
+      <parameter id="m23" name="m23" metaid="metaid_0000094" value="1" sboTerm="SBO:0000356"/>
+      <parameter id="m24" name="m24" metaid="metaid_0000095" value="0.405" sboTerm="SBO:0000356"/>
+      <parameter id="m25" name="m25" metaid="metaid_0000096" value="0.28" sboTerm="SBO:0000356"/>
+      <parameter id="m26" name="m26" metaid="metaid_0000097" value="0.14" sboTerm="SBO:0000356"/>
+      <parameter id="a" name="a" metaid="metaid_0000098" value="2" sboTerm="SBO:0000191"/>
+      <parameter id="b" name="b" metaid="metaid_0000099" value="3" sboTerm="SBO:0000191"/>
+      <parameter id="c" name="c" metaid="metaid_0000100" value="3" sboTerm="SBO:0000191"/>
+      <parameter id="d" name="d" metaid="metaid_0000101" value="2.5" sboTerm="SBO:0000191"/>
+      <parameter id="e" name="e" metaid="metaid_0000102" value="2" sboTerm="SBO:0000191"/>
+      <parameter id="f" name="f" metaid="metaid_0000103" value="3" sboTerm="SBO:0000191"/>
+      <parameter id="h" name="h" metaid="metaid_0000104" value="2" sboTerm="SBO:0000191"/>
+      <parameter id="g" name="g" metaid="metaid_0000105" value="2" sboTerm="SBO:0000191"/>
+      <parameter id="i" name="i" metaid="metaid_0000106" value="3" sboTerm="SBO:0000191"/>
+      <parameter id="j" name="j" metaid="metaid_0000107" value="3" sboTerm="SBO:0000191"/>
+      <parameter id="k" name="k" metaid="metaid_0000108" value="3" sboTerm="SBO:0000191"/>
+      <parameter id="l" name="l" metaid="metaid_0000109" value="2" sboTerm="SBO:0000191"/>
+      <parameter id="m" name="m" metaid="metaid_0000110" value="2" sboTerm="SBO:0000191"/>
+      <parameter id="n" name="n" metaid="metaid_0000111" value="1" sboTerm="SBO:0000191"/>
+      <parameter id="o" name="o" metaid="metaid_0000112" value="2" sboTerm="SBO:0000191"/>
+      <parameter id="s" name="s" metaid="metaid_0000113" value="3" sboTerm="SBO:0000191"/>
+      <parameter id="p1" name="p1" metaid="metaid_0000114" value="0.4" sboTerm="SBO:0000009"/>
+      <parameter id="p2" name="p2" metaid="metaid_0000115" value="0.27" sboTerm="SBO:0000009"/>
+      <parameter id="p3" name="p3" metaid="metaid_0000116" value="0.1" sboTerm="SBO:0000009"/>
+      <parameter id="p4" name="p4" metaid="metaid_0000117" value="0.268" sboTerm="SBO:0000009"/>
+      <parameter id="p5" name="p5" metaid="metaid_0000118" value="1" sboTerm="SBO:0000009"/>
+      <parameter id="p6" name="p6" metaid="metaid_0000119" value="0.44" sboTerm="SBO:0000009"/>
+      <parameter id="p7" name="p7" metaid="metaid_0000120" value="0.3" sboTerm="SBO:0000009"/>
+      <parameter id="p8" name="p8" metaid="metaid_0000121" value="0.7" sboTerm="SBO:0000009"/>
+      <parameter id="p9" name="p9" metaid="metaid_0000122" value="0.4" sboTerm="SBO:0000009"/>
+      <parameter id="p10" name="p10" metaid="metaid_0000123" value="0.36" sboTerm="SBO:0000009"/>
+      <parameter id="p11" name="p11" metaid="metaid_0000124" value="0.23" sboTerm="SBO:0000009"/>
+      <parameter id="p12" name="p12" metaid="metaid_0000125" value="30" sboTerm="SBO:0000009"/>
+      <parameter id="p13" name="p13" metaid="metaid_0000126" value="0.4" sboTerm="SBO:0000009"/>
+      <parameter id="p14" name="p14" metaid="metaid_0000127" value="0.45" sboTerm="SBO:0000009"/>
+      <parameter id="p15" name="p15" metaid="metaid_0000128" value="0.05" sboTerm="SBO:0000009"/>
+      <parameter id="q1" name="q1" metaid="metaid_0000129" value="0.8" sboTerm="SBO:0000009"/>
+      <parameter id="q2" name="q2" metaid="metaid_0000130" value="0.5" sboTerm="SBO:0000009"/>
+      <parameter id="q3" name="q3" metaid="metaid_0000131" value="2.9" sboTerm="SBO:0000009"/>
+      <parameter id="q4" name="q4" metaid="metaid_0000132" value="0.6" sboTerm="SBO:0000009"/>
+      <parameter id="dawn" name="dawn" metaid="metaid_0000133" value="0"/>
+      <parameter id="dusk" name="dusk" metaid="metaid_0000134" value="12"/>
+      <parameter id="dawn1" name="dawn1" metaid="metaid_0000135" value="0"/>
+      <parameter id="dusk1" name="dusk1" metaid="metaid_0000136" value="3"/>
+      <parameter id="dawn2" name="dawn2" metaid="metaid_0000137" value="9"/>
+      <parameter id="dusk2" name="dusk2" metaid="metaid_0000138" value="12"/>
+      <parameter id="L" constant="false" name="L" metaid="metaid_0000139" value="0.5"/>
+      <parameter id="D" constant="false" name="D" metaid="metaid_0000140" value="0.5"/>
+      <parameter id="parameter_1" constant="false" name="quantity" metaid="metaid_0000141" value="0.5"/>
+    </listOfParameters>
+    <listOfRules>
+      <assignmentRule metaid="metaid_0000163" variable="L">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <apply>
+            <times/>
+            <cn> 0.5 </cn>
+            <apply>
+              <plus/>
+              <apply>
+                <minus/>
+                <apply>
+                  <plus/>
+                  <cn> 1 </cn>
+                  <apply>
+                    <tanh/>
+                    <apply>
+                      <divide/>
+                      <apply>
+                        <minus/>
+                        <csymbol encoding="text" definitionURL="http://www.sbml.org/sbml/symbols/time"> t </csymbol>
+                        <apply>
+                          <times/>
+                          <cn> 24 </cn>
+                          <apply>
+                            <floor/>
+                            <apply>
+                              <divide/>
+                              <csymbol encoding="text" definitionURL="http://www.sbml.org/sbml/symbols/time"> t </csymbol>
+                              <cn> 24 </cn>
+                            </apply>
+                          </apply>
+                        </apply>
+                      </apply>
+                      <cn> 0.5 </cn>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <plus/>
+                  <cn> 1 </cn>
+                  <apply>
+                    <tanh/>
+                    <apply>
+                      <divide/>
+                      <apply>
+                        <minus/>
+                        <apply>
+                          <minus/>
+                          <csymbol encoding="text" definitionURL="http://www.sbml.org/sbml/symbols/time"> t </csymbol>
+                          <apply>
+                            <times/>
+                            <cn> 24 </cn>
+                            <apply>
+                              <floor/>
+                              <apply>
+                                <divide/>
+                                <csymbol encoding="text" definitionURL="http://www.sbml.org/sbml/symbols/time"> t </csymbol>
+                                <cn> 24 </cn>
+                              </apply>
+                            </apply>
+                          </apply>
+                        </apply>
+                        <cn> 12 </cn>
+                      </apply>
+                      <cn> 0.5 </cn>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+              <cn> 1 </cn>
+              <apply>
+                <tanh/>
+                <apply>
+                  <divide/>
+                  <apply>
+                    <minus/>
+                    <apply>
+                      <minus/>
+                      <csymbol encoding="text" definitionURL="http://www.sbml.org/sbml/symbols/time"> t </csymbol>
+                      <apply>
+                        <times/>
+                        <cn> 24 </cn>
+                        <apply>
+                          <floor/>
+                          <apply>
+                            <divide/>
+                            <csymbol encoding="text" definitionURL="http://www.sbml.org/sbml/symbols/time"> t </csymbol>
+                            <cn> 24 </cn>
+                          </apply>
+                        </apply>
+                      </apply>
+                    </apply>
+                    <cn> 24 </cn>
+                  </apply>
+                  <cn> 0.5 </cn>
+                </apply>
+              </apply>
+            </apply>
+          </apply>
+        </math>
+            </assignmentRule>
+      <assignmentRule metaid="metaid_0000164" variable="D">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <apply>
+            <minus/>
+            <cn type="integer"> 1 </cn>
+            <ci> L </ci>
+          </apply>
+        </math>
+            </assignmentRule>
+    </listOfRules>
+    <listOfReactions>
+      <reaction id="cL_m_trscr" name="cL_m_trscr" metaid="metaid_0000165" reversible="false" sboTerm="SBO:0000183">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqmodel="http://biomodels.net/model-qualifiers/" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#metaid_0000165">
+	<bqbiol:isVersionOf>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/go/GO:0009299"/>
+	</rdf:Bag>
+	</bqbiol:isVersionOf>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+              <listOfProducts>
+          <speciesReference species="cL_m" metaid="c7dd7db5-19a9-4ccc-a461-5ac700aa644a"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="cNI" metaid="_604dd10d-3871-4714-962f-a9d63e33516d"/>
+          <modifierSpeciesReference species="cP" metaid="_672d2df9-813a-4c44-9f7f-102a0016ac61"/>
+          <modifierSpeciesReference species="cP7" metaid="dcc052cd-4d0e-450f-84ae-aad913a6ba58"/>
+          <modifierSpeciesReference species="cP9" metaid="_31e2aa88-cd04-49ea-83a5-4e3e960b38c1"/>
+          <modifierSpeciesReference species="cTm" metaid="_36553a0e-52ef-4649-bd92-a7214fcb1afd"/>
+        </listOfModifiers>
+        <kineticLaw metaid="_7692e5cc-8278-4b1c-99d1-3cda6e1bcca8">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> def </ci>
+              <apply>
+                <ci> function_4_cL_m_trscr </ci>
+                <ci> L </ci>
+                <ci> a </ci>
+                <ci> b </ci>
+                <ci> cNI </ci>
+                <ci> cP </ci>
+                <ci> cP7 </ci>
+                <ci> cP9 </ci>
+                <ci> cTm </ci>
+                <ci> def </ci>
+                <ci> g1 </ci>
+                <ci> g2 </ci>
+                <ci> n0 </ci>
+                <ci> n1 </ci>
+                <ci> q1 </ci>
+              </apply>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="cL_m_degr" name="cL_m_degr" metaid="metaid_0000166" reversible="false" sboTerm="SBO:0000179">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqmodel="http://biomodels.net/model-qualifiers/" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#metaid_0000166">
+	<bqbiol:isVersionOf>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/go/GO:0006402"/>
+	</rdf:Bag>
+	</bqbiol:isVersionOf>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+              <listOfReactants>
+          <speciesReference species="cL_m" metaid="_02285160-2972-4e9b-a909-73e397ac8aeb"/>
+        </listOfReactants>
+        <kineticLaw metaid="_791ce05e-75e5-402d-93f4-4786fdddd258">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> def </ci>
+              <apply>
+                <ci> function_4_cL_m_degr </ci>
+                <ci> D </ci>
+                <ci> L </ci>
+                <ci> cL_m </ci>
+                <ci> def </ci>
+                <ci> m1 </ci>
+                <ci> m2 </ci>
+              </apply>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="cL_trsl" name="cL_trsl" metaid="metaid_0000167" reversible="false" sboTerm="SBO:0000184">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqmodel="http://biomodels.net/model-qualifiers/" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#metaid_0000167">
+	<bqbiol:isVersionOf>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/go/GO:0006412"/>
+	</rdf:Bag>
+	</bqbiol:isVersionOf>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+              <listOfProducts>
+          <speciesReference species="cL" metaid="_9e2c8320-fca0-4d51-96d6-31e8317f5aef"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="cL_m" metaid="_6f43c2aa-e00d-4401-951f-2ab6375b5db8"/>
+        </listOfModifiers>
+        <kineticLaw metaid="_37b92898-76dc-4308-a81a-bf7270a725eb">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> def </ci>
+              <apply>
+                <ci> function_4_cL_trsl </ci>
+                <ci> D </ci>
+                <ci> L </ci>
+                <ci> cL_m </ci>
+                <ci> def </ci>
+                <ci> p1 </ci>
+                <ci> p2 </ci>
+              </apply>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="cL_degr" name="cL_degr" metaid="metaid_0000168" reversible="false" sboTerm="SBO:0000179">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqmodel="http://biomodels.net/model-qualifiers/" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#metaid_0000168">
+	<bqbiol:isVersionOf>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/go/GO:0030163"/>
+	</rdf:Bag>
+	</bqbiol:isVersionOf>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+              <listOfReactants>
+          <speciesReference species="cL" metaid="_29c65735-7e4b-4155-a9f4-52bec977b1c0"/>
+        </listOfReactants>
+        <kineticLaw metaid="e66dad4d-0ba2-4560-aa59-8bad8a558f86">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> def </ci>
+              <apply>
+                <ci> function_4_cL_degr </ci>
+                <ci> c </ci>
+                <ci> cL </ci>
+                <ci> def </ci>
+                <ci> g3 </ci>
+                <ci> m3 </ci>
+                <ci> p3 </ci>
+              </apply>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="cL_modif" name="cL_modif" metaid="metaid_0000169" reversible="false" sboTerm="SBO:0000176">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqmodel="http://biomodels.net/model-qualifiers/" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#metaid_0000169">
+	<bqbiol:isVersionOf>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/go/GO:0006464"/>
+	</rdf:Bag>
+	</bqbiol:isVersionOf>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+              <listOfProducts>
+          <speciesReference species="cLm" metaid="d996ed97-cbae-40d4-b735-68047e79e8ca"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="cL" metaid="_807a014c-16f2-45c9-8b6f-ca18ebe8b049"/>
+        </listOfModifiers>
+        <kineticLaw metaid="_648b99c1-f1d7-471f-8e25-862f04ae27d9">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> def </ci>
+              <apply>
+                <ci> function_4_cL_modif </ci>
+                <ci> c </ci>
+                <ci> cL </ci>
+                <ci> def </ci>
+                <ci> g3 </ci>
+                <ci> p3 </ci>
+              </apply>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="cLm_degr" name="cLm_degr" metaid="metaid_0000170" reversible="false" sboTerm="SBO:0000179">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqmodel="http://biomodels.net/model-qualifiers/" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#metaid_0000170">
+	<bqbiol:isVersionOf>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/go/GO:0030163"/>
+	</rdf:Bag>
+	</bqbiol:isVersionOf>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+              <listOfReactants>
+          <speciesReference species="cLm" metaid="_67f562cf-8db8-420f-a08e-575347e13313"/>
+        </listOfReactants>
+        <kineticLaw metaid="_6de940f2-4c0b-4b20-8d07-de8506758bd2">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> def </ci>
+              <apply>
+                <ci> function_4_cLm_degr </ci>
+                <ci> cLm </ci>
+                <ci> def </ci>
+                <ci> m4 </ci>
+              </apply>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="cT_m_trscr" name="cT_m_trscr" metaid="metaid_0000171" reversible="false" sboTerm="SBO:0000183">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqmodel="http://biomodels.net/model-qualifiers/" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#metaid_0000171">
+	<bqbiol:isVersionOf>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/go/GO:0009299"/>
+	</rdf:Bag>
+	</bqbiol:isVersionOf>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+              <listOfProducts>
+          <speciesReference species="cT_m" metaid="_6b0fc74c-8c4f-45fc-b861-d09973d64a13"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="cL" metaid="b4fa7106-6468-4b93-9496-32dfff879e40"/>
+          <modifierSpeciesReference species="cY" metaid="_73302047-56d1-41e4-808a-373d800b39c6"/>
+        </listOfModifiers>
+        <kineticLaw metaid="_4e1b1dca-71a5-4d7d-ba88-e022e98cbf9c">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> def </ci>
+              <apply>
+                <ci> function_4_cT_m_trscr </ci>
+                <ci> cL </ci>
+                <ci> cY </ci>
+                <ci> d </ci>
+                <ci> def </ci>
+                <ci> e </ci>
+                <ci> g4 </ci>
+                <ci> g5 </ci>
+                <ci> n2 </ci>
+                <ci> n3 </ci>
+              </apply>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="cT_m_degr" name="cT_m_degr" metaid="metaid_0000172" reversible="false" sboTerm="SBO:0000179">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqmodel="http://biomodels.net/model-qualifiers/" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#metaid_0000172">
+	<bqbiol:isVersionOf>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/go/GO:0006402"/>
+	</rdf:Bag>
+	</bqbiol:isVersionOf>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+              <listOfReactants>
+          <speciesReference species="cT_m" metaid="_92feff2c-af21-4229-aed7-a78c28e4b69f"/>
+        </listOfReactants>
+        <kineticLaw metaid="f0e65350-1fab-4abf-ad99-10bbcfa46b05">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> def </ci>
+              <apply>
+                <ci> function_4_cT_m_degr </ci>
+                <ci> cT_m </ci>
+                <ci> def </ci>
+                <ci> m5 </ci>
+              </apply>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="cT_trsl" name="cT_trsl" metaid="metaid_0000173" reversible="false" sboTerm="SBO:0000184">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqmodel="http://biomodels.net/model-qualifiers/" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#metaid_0000173">
+	<bqbiol:isVersionOf>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/go/GO:0006412"/>
+	</rdf:Bag>
+	</bqbiol:isVersionOf>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+              <listOfProducts>
+          <speciesReference species="cT" metaid="_1aa2f7cf-d098-4809-b079-3942e1c6410c"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="cT_m" metaid="_39c0d8c1-9bcb-4d0e-b766-37204a07f597"/>
+        </listOfModifiers>
+        <kineticLaw metaid="c4271fac-a188-456f-8278-51fa8aa7e369">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> def </ci>
+              <apply>
+                <ci> function_4_cT_trsl </ci>
+                <ci> cT_m </ci>
+                <ci> def </ci>
+                <ci> p4 </ci>
+              </apply>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="cT_degr" name="cT_degr" metaid="metaid_0000174" reversible="false" sboTerm="SBO:0000179">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqmodel="http://biomodels.net/model-qualifiers/" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#metaid_0000174">
+	<bqbiol:isVersionOf>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/go/GO:0030163"/>
+	</rdf:Bag>
+	</bqbiol:isVersionOf>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+              <listOfReactants>
+          <speciesReference species="cT" metaid="_7580e505-6e9f-42bc-8e7d-e9b27cf6119b"/>
+        </listOfReactants>
+        <listOfModifiers>
+          <modifierSpeciesReference species="cZG" metaid="bdaf2afe-15b5-4679-a721-b8ae6f2580d5"/>
+          <modifierSpeciesReference species="cZTL" metaid="bc128d6b-f069-4f90-9756-0c3d9703bf55"/>
+        </listOfModifiers>
+        <kineticLaw metaid="_832fee80-0cf8-4374-860f-7025414cf1ee">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> def </ci>
+              <apply>
+                <ci> function_4_cT_degr </ci>
+                <ci> D </ci>
+                <ci> L </ci>
+                <ci> cT </ci>
+                <ci> cZG </ci>
+                <ci> cZTL </ci>
+                <ci> def </ci>
+                <ci> m6 </ci>
+                <ci> m7 </ci>
+                <ci> m8 </ci>
+                <ci> p5 </ci>
+              </apply>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="cT_modif" name="cT_modif" metaid="metaid_0000175" reversible="false" sboTerm="SBO:0000176">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqmodel="http://biomodels.net/model-qualifiers/" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#metaid_0000175">
+	<bqbiol:isVersionOf>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/go/GO:0006464"/>
+	</rdf:Bag>
+	</bqbiol:isVersionOf>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+              <listOfProducts>
+          <speciesReference species="cTm" metaid="_237599e1-e9ff-465b-82e0-eb025dad710e"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="cT" metaid="a2055246-83f0-4598-9184-f9d87748ebe4"/>
+        </listOfModifiers>
+        <kineticLaw metaid="d6cd9517-9121-46a7-a227-def09c9ee2e7">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> def </ci>
+              <apply>
+                <ci> function_4_cT_modif </ci>
+                <ci> cT </ci>
+                <ci> def </ci>
+                <ci> f </ci>
+                <ci> g6 </ci>
+                <ci> p15 </ci>
+              </apply>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="cTm_degr" name="cTm_degr" metaid="metaid_0000176" reversible="false" sboTerm="SBO:0000179">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqmodel="http://biomodels.net/model-qualifiers/" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#metaid_0000176">
+	<bqbiol:isVersionOf>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/go/GO:0030163"/>
+	</rdf:Bag>
+	</bqbiol:isVersionOf>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+              <listOfReactants>
+          <speciesReference species="cTm" metaid="_184f0ddd-0425-4945-9a92-a7e597ee77c5"/>
+        </listOfReactants>
+        <kineticLaw metaid="_5dbbff43-cdf2-4cc3-9041-7a9c94d57517">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> def </ci>
+              <apply>
+                <ci> function_4_cTm_degr </ci>
+                <ci> D </ci>
+                <ci> L </ci>
+                <ci> cTm </ci>
+                <ci> def </ci>
+                <ci> m25 </ci>
+                <ci> m26 </ci>
+              </apply>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="cY_m_trscr" name="cY_m_trscr" metaid="metaid_0000177" reversible="false" sboTerm="SBO:0000183">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqmodel="http://biomodels.net/model-qualifiers/" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#metaid_0000177">
+	<bqbiol:isVersionOf>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/go/GO:0009299"/>
+	</rdf:Bag>
+	</bqbiol:isVersionOf>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+              <listOfProducts>
+          <speciesReference species="cY_m" metaid="c324c1f7-9e48-474f-88c9-2b9abdaeae29"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="cL" metaid="_7c6fabf3-3e56-42b9-8a60-64a239aca11f"/>
+          <modifierSpeciesReference species="cP" metaid="ce9d94e6-a757-46d3-a580-05eb9bea3f3d"/>
+          <modifierSpeciesReference species="cT" metaid="bf47add9-7089-418a-8e9f-3afeabaf7fe3"/>
+        </listOfModifiers>
+        <kineticLaw metaid="_79ddfbce-69fe-4776-9753-60101a5821a8">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> def </ci>
+              <apply>
+                <ci> function_4_cY_m_trscr </ci>
+                <ci> D </ci>
+                <ci> L </ci>
+                <ci> cL </ci>
+                <ci> cP </ci>
+                <ci> cT </ci>
+                <ci> def </ci>
+                <ci> g </ci>
+                <ci> g16 </ci>
+                <ci> g7 </ci>
+                <ci> n5 </ci>
+                <ci> n6 </ci>
+                <ci> q2 </ci>
+                <ci> s </ci>
+              </apply>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="cY_m_degr" name="cY_m_degr" metaid="metaid_0000178" reversible="false" sboTerm="SBO:0000179">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqmodel="http://biomodels.net/model-qualifiers/" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#metaid_0000178">
+	<bqbiol:isVersionOf>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/go/GO:0006402"/>
+	</rdf:Bag>
+	</bqbiol:isVersionOf>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+              <listOfReactants>
+          <speciesReference species="cY_m" metaid="_17c966a7-9652-44ac-a677-d2a25a0b0dd3"/>
+        </listOfReactants>
+        <kineticLaw metaid="_09d5a37f-cb54-4654-ad48-c509df98828b">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> def </ci>
+              <apply>
+                <ci> function_4_cY_m_degr </ci>
+                <ci> cY_m </ci>
+                <ci> def </ci>
+                <ci> m9 </ci>
+              </apply>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="cY_trsl" name="cY_trsl" metaid="metaid_0000179" reversible="false" sboTerm="SBO:0000184">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqmodel="http://biomodels.net/model-qualifiers/" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#metaid_0000179">
+	<bqbiol:isVersionOf>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/go/GO:0006412"/>
+	</rdf:Bag>
+	</bqbiol:isVersionOf>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+              <listOfProducts>
+          <speciesReference species="cY" metaid="_8b4f9c14-4d60-4b0a-b581-3ec1187772b4"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="cY_m" metaid="a3bae004-2499-4e6d-87ec-1d874ef6c771"/>
+        </listOfModifiers>
+        <kineticLaw metaid="f16a86ae-908a-4782-8888-05b0a1182da9">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> def </ci>
+              <apply>
+                <ci> function_4_cY_trsl </ci>
+                <ci> cY_m </ci>
+                <ci> def </ci>
+                <ci> p6 </ci>
+              </apply>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="cY_degr" name="cY_degr" metaid="metaid_0000180" reversible="false" sboTerm="SBO:0000179">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqmodel="http://biomodels.net/model-qualifiers/" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#metaid_0000180">
+	<bqbiol:isVersionOf>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/go/GO:0030163"/>
+	</rdf:Bag>
+	</bqbiol:isVersionOf>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+              <listOfReactants>
+          <speciesReference species="cY" metaid="b5d1b33c-b0d9-4ea5-b5c4-548074f0ddaf"/>
+        </listOfReactants>
+        <kineticLaw metaid="b76a929c-96d2-41ee-8fa2-3cc3dadb22b7">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> def </ci>
+              <apply>
+                <ci> function_4_cY_degr </ci>
+                <ci> cY </ci>
+                <ci> def </ci>
+                <ci> m10 </ci>
+              </apply>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="cP_trsl" name="cP_trsl" metaid="metaid_0000181" reversible="false" sboTerm="SBO:0000184">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqmodel="http://biomodels.net/model-qualifiers/" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#metaid_0000181">
+	<bqbiol:isVersionOf>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/go/GO:0006412"/>
+	</rdf:Bag>
+	</bqbiol:isVersionOf>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+              <listOfProducts>
+          <speciesReference species="cP" metaid="_0b037a15-f0a5-43e6-a0d9-fd365dc9ee2f"/>
+        </listOfProducts>
+        <kineticLaw metaid="c104a493-88bc-468d-88a2-3563c2b3a273">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> def </ci>
+              <apply>
+                <ci> function_4_cP_trsl </ci>
+                <ci> D </ci>
+                <ci> cP </ci>
+                <ci> def </ci>
+                <ci> p7 </ci>
+              </apply>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="cP_degr" name="cP_degr" metaid="metaid_0000182" reversible="false" sboTerm="SBO:0000179">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqmodel="http://biomodels.net/model-qualifiers/" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#metaid_0000182">
+	<bqbiol:isVersionOf>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/go/GO:0030163"/>
+	</rdf:Bag>
+	</bqbiol:isVersionOf>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+              <listOfReactants>
+          <speciesReference species="cP" metaid="_44031f45-070c-453d-9854-5c26a2fa4beb"/>
+        </listOfReactants>
+        <kineticLaw metaid="_125c1793-8584-44a9-8f34-856c1b622456">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> def </ci>
+              <apply>
+                <ci> function_4_cP_degr </ci>
+                <ci> L </ci>
+                <ci> cP </ci>
+                <ci> def </ci>
+                <ci> m11 </ci>
+              </apply>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="cP9_m_trscr" name="cP9_m_trscr" metaid="metaid_0000183" reversible="false" sboTerm="SBO:0000183">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqmodel="http://biomodels.net/model-qualifiers/" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#metaid_0000183">
+	<bqbiol:isVersionOf>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/go/GO:0009299"/>
+	</rdf:Bag>
+	</bqbiol:isVersionOf>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+              <listOfProducts>
+          <speciesReference species="cP9_m" metaid="_7007aa53-c3d7-4022-bef9-945bf9ed9f7c"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="cL" metaid="_8f36bba4-9989-488f-99e2-cb9f49a8b14d"/>
+          <modifierSpeciesReference species="cP" metaid="c0aa0a39-87e6-4f93-a1ea-9b3f6a72597b"/>
+          <modifierSpeciesReference species="cT" metaid="_0de864a9-d8ca-4be8-a05a-150ac0f5b3fe"/>
+        </listOfModifiers>
+        <kineticLaw metaid="d0e1f184-be5f-4141-afb3-dd0148a109d7">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> def </ci>
+              <apply>
+                <ci> function_4_cP9_m_trscr </ci>
+                <ci> L </ci>
+                <ci> cL </ci>
+                <ci> cP </ci>
+                <ci> cT </ci>
+                <ci> def </ci>
+                <ci> g8 </ci>
+                <ci> g9 </ci>
+                <ci> h </ci>
+                <ci> i </ci>
+                <ci> n4 </ci>
+                <ci> n7 </ci>
+                <ci> q3 </ci>
+              </apply>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="cP9_m_degr" name="cP9_m_degr" metaid="metaid_0000184" reversible="false" sboTerm="SBO:0000179">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqmodel="http://biomodels.net/model-qualifiers/" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#metaid_0000184">
+	<bqbiol:isVersionOf>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/go/GO:0006402"/>
+	</rdf:Bag>
+	</bqbiol:isVersionOf>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+              <listOfReactants>
+          <speciesReference species="cP9_m" metaid="e39d1357-72f9-4873-a722-80bc25b3e3eb"/>
+        </listOfReactants>
+        <kineticLaw metaid="f77d58a1-fe8e-4891-ac8f-ae634d5c3b4f">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> def </ci>
+              <apply>
+                <ci> function_4_cP9_m_degr </ci>
+                <ci> cP9_m </ci>
+                <ci> def </ci>
+                <ci> m12 </ci>
+              </apply>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="cP9_trsl" name="cP9_trsl" metaid="metaid_0000185" reversible="false" sboTerm="SBO:0000184">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqmodel="http://biomodels.net/model-qualifiers/" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#metaid_0000185">
+	<bqbiol:isVersionOf>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/go/GO:0006412"/>
+	</rdf:Bag>
+	</bqbiol:isVersionOf>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+              <listOfProducts>
+          <speciesReference species="cP9" metaid="_7a07f802-69d4-4596-b75d-6040734b9218"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="cP9_m" metaid="ada071a2-ce97-4b0f-8eb8-af9b2e6591dd"/>
+        </listOfModifiers>
+        <kineticLaw metaid="_18e4bda4-95bf-46eb-9337-1d1e4e28d53a">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> def </ci>
+              <apply>
+                <ci> function_4_cP9_trsl </ci>
+                <ci> cP9_m </ci>
+                <ci> def </ci>
+                <ci> p8 </ci>
+              </apply>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="cP9_degr" name="cP9_degr" metaid="metaid_0000186" reversible="false" sboTerm="SBO:0000179">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqmodel="http://biomodels.net/model-qualifiers/" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#metaid_0000186">
+	<bqbiol:isVersionOf>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/go/GO:0030163"/>
+	</rdf:Bag>
+	</bqbiol:isVersionOf>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+              <listOfReactants>
+          <speciesReference species="cP9" metaid="dc04e7d3-f987-4d38-b0c3-685b0aca7f70"/>
+        </listOfReactants>
+        <kineticLaw metaid="_22688897-9fbd-46ec-8135-96b247acd5df">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> def </ci>
+              <apply>
+                <ci> function_4_cP9_degr </ci>
+                <ci> D </ci>
+                <ci> L </ci>
+                <ci> cP9 </ci>
+                <ci> def </ci>
+                <ci> m13 </ci>
+                <ci> m22 </ci>
+              </apply>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="cP7_m_trscr" name="cP7_m_trscr" metaid="metaid_0000187" reversible="false" sboTerm="SBO:0000183">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqmodel="http://biomodels.net/model-qualifiers/" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#metaid_0000187">
+	<bqbiol:isVersionOf>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/go/GO:0009299"/>
+	</rdf:Bag>
+	</bqbiol:isVersionOf>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+              <listOfProducts>
+          <speciesReference species="cP7_m" metaid="_1c5fca4e-a118-4425-bf25-6aee2a3733aa"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="cL" metaid="_311c350b-941b-4a41-8ba9-2e53b5f4ff41"/>
+          <modifierSpeciesReference species="cLm" metaid="_31460551-d4a2-4541-aab7-1d69d774c5e7"/>
+          <modifierSpeciesReference species="cP9" metaid="_707e3294-f448-479c-b1d0-fb611b5e6c4d"/>
+        </listOfModifiers>
+        <kineticLaw metaid="_5558aec1-cee2-4b05-8a52-35ad52b8366a">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> def </ci>
+              <apply>
+                <ci> function_4_cP7_m_trscr </ci>
+                <ci> cL </ci>
+                <ci> cLm </ci>
+                <ci> cP9 </ci>
+                <ci> def </ci>
+                <ci> g10 </ci>
+                <ci> g11 </ci>
+                <ci> j </ci>
+                <ci> k </ci>
+                <ci> n8 </ci>
+                <ci> n9 </ci>
+              </apply>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="cP7_m_degr" name="cP7_m_degr" metaid="metaid_0000188" reversible="false" sboTerm="SBO:0000179">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqmodel="http://biomodels.net/model-qualifiers/" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#metaid_0000188">
+	<bqbiol:isVersionOf>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/go/GO:0006402"/>
+	</rdf:Bag>
+	</bqbiol:isVersionOf>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+              <listOfReactants>
+          <speciesReference species="cP7_m" metaid="_2acb3732-3cf9-4d53-ae6b-71ff4c186bcf"/>
+        </listOfReactants>
+        <kineticLaw metaid="_25fa21bf-90a0-417a-a244-e5bb92a17b7d">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> def </ci>
+              <apply>
+                <ci> function_4_cP7_m_degr </ci>
+                <ci> cP7_m </ci>
+                <ci> def </ci>
+                <ci> m14 </ci>
+              </apply>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="cP7_trsl" name="cP7_trsl" metaid="metaid_0000189" reversible="false" sboTerm="SBO:0000184">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqmodel="http://biomodels.net/model-qualifiers/" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#metaid_0000189">
+	<bqbiol:isVersionOf>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/go/GO:0006412"/>
+	</rdf:Bag>
+	</bqbiol:isVersionOf>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+              <listOfProducts>
+          <speciesReference species="cP7" metaid="bae7667c-7732-4b3e-bb7e-464bffd710d6"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="cP7_m" metaid="c13acbf4-aa3f-4365-a34e-5e95146b6ee8"/>
+        </listOfModifiers>
+        <kineticLaw metaid="dcadf2ea-c572-4bed-a7cc-e9a159f971ae">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> def </ci>
+              <apply>
+                <ci> function_4_cP7_trsl </ci>
+                <ci> cP7_m </ci>
+                <ci> def </ci>
+                <ci> p9 </ci>
+              </apply>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="cP7_degr" name="cP7_degr" metaid="metaid_0000190" reversible="false" sboTerm="SBO:0000179">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqmodel="http://biomodels.net/model-qualifiers/" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#metaid_0000190">
+	<bqbiol:isPartOf>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/go/GO:0030163"/>
+	</rdf:Bag>
+	</bqbiol:isPartOf>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+              <listOfReactants>
+          <speciesReference species="cP7" metaid="_6d28e36d-643a-4297-a797-197ccaade408"/>
+        </listOfReactants>
+        <kineticLaw metaid="_0c3400f6-ef94-4d87-92dc-970e8eae773f">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> def </ci>
+              <apply>
+                <ci> function_4_cP7_degr </ci>
+                <ci> D </ci>
+                <ci> L </ci>
+                <ci> cP7 </ci>
+                <ci> def </ci>
+                <ci> m15 </ci>
+                <ci> m23 </ci>
+              </apply>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="cNI_m_trscr" name="cNI_m_trscr" metaid="metaid_0000191" reversible="false" sboTerm="SBO:0000183">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqmodel="http://biomodels.net/model-qualifiers/" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#metaid_0000191">
+	<bqbiol:isVersionOf>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/go/GO:0009299"/>
+	</rdf:Bag>
+	</bqbiol:isVersionOf>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+              <listOfProducts>
+          <speciesReference species="cNI_m" metaid="af374150-9732-48aa-822f-5295b2582134"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="cLm" metaid="_25a9270f-e2f9-4e76-8882-b277734d33dc"/>
+          <modifierSpeciesReference species="cP7" metaid="_1512697b-9c4f-4733-98a3-052917e8577e"/>
+        </listOfModifiers>
+        <kineticLaw metaid="d4203a2c-fe34-4c07-99cc-0aa3bffd7a5e">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> def </ci>
+              <apply>
+                <ci> function_4_cNI_m_trscr </ci>
+                <ci> cLm </ci>
+                <ci> cP7 </ci>
+                <ci> def </ci>
+                <ci> g12 </ci>
+                <ci> g13 </ci>
+                <ci> l </ci>
+                <ci> m </ci>
+                <ci> n10 </ci>
+                <ci> n11 </ci>
+              </apply>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="cNI_m_degr" name="cNI_m_degr" metaid="metaid_0000192" reversible="false" sboTerm="SBO:0000179">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqmodel="http://biomodels.net/model-qualifiers/" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#metaid_0000192">
+	<bqbiol:isVersionOf>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/go/GO:0006402"/>
+	</rdf:Bag>
+	</bqbiol:isVersionOf>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+              <listOfReactants>
+          <speciesReference species="cNI_m" metaid="be9eb687-bd60-4bc0-a28d-d0b60b14864b"/>
+        </listOfReactants>
+        <kineticLaw metaid="_6ae4eeab-3327-4ee4-b39b-c3ed15399ac6">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> def </ci>
+              <apply>
+                <ci> function_4_cNI_m_degr </ci>
+                <ci> cNI_m </ci>
+                <ci> def </ci>
+                <ci> m16 </ci>
+              </apply>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="cNI_trsl" name="cNI_trsl" metaid="metaid_0000193" reversible="false" sboTerm="SBO:0000184">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqmodel="http://biomodels.net/model-qualifiers/" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#metaid_0000193">
+	<bqbiol:isVersionOf>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/go/GO:0006412"/>
+	</rdf:Bag>
+	</bqbiol:isVersionOf>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+              <listOfProducts>
+          <speciesReference species="cNI" metaid="_9cca2be8-6cbe-42b7-ac10-856fb0d41e01"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="cNI_m" metaid="_09434749-71df-4c3b-add9-3569ea1536d8"/>
+        </listOfModifiers>
+        <kineticLaw metaid="_9a3f1318-ce99-4d57-9640-f94be505b1ca">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> def </ci>
+              <apply>
+                <ci> function_4_cNI_trsl </ci>
+                <ci> cNI_m </ci>
+                <ci> def </ci>
+                <ci> p10 </ci>
+              </apply>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="cNI_degr" name="cNI_degr" metaid="metaid_0000194" reversible="false" sboTerm="SBO:0000179">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqmodel="http://biomodels.net/model-qualifiers/" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#metaid_0000194">
+	<bqbiol:isVersionOf>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/go/GO:0030163"/>
+	</rdf:Bag>
+	</bqbiol:isVersionOf>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+              <listOfReactants>
+          <speciesReference species="cNI" metaid="_6c25f74e-7110-4d0c-a1dc-cc0128c7219a"/>
+        </listOfReactants>
+        <kineticLaw metaid="_0302f25c-748f-4ce2-a4b4-f7f95e1d9627">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> def </ci>
+              <apply>
+                <ci> function_4_cNI_degr </ci>
+                <ci> D </ci>
+                <ci> L </ci>
+                <ci> cNI </ci>
+                <ci> def </ci>
+                <ci> m17 </ci>
+                <ci> m24 </ci>
+              </apply>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="cG_m_trscr" name="cG_m_trscr" metaid="metaid_0000195" reversible="false" sboTerm="SBO:0000183">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqmodel="http://biomodels.net/model-qualifiers/" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#metaid_0000195">
+	<bqbiol:isVersionOf>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/go/GO:0009299"/>
+	</rdf:Bag>
+	</bqbiol:isVersionOf>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+              <listOfProducts>
+          <speciesReference species="cG_m" metaid="_03838517-f7bf-44a3-8126-0422e02ff8d2"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="cL" metaid="ad34c0a8-32ef-40aa-b0df-ea9c7ca7624e"/>
+          <modifierSpeciesReference species="cP" metaid="ea19a252-8484-4289-90f2-a2b675aade53"/>
+          <modifierSpeciesReference species="cT" metaid="a499a874-d189-41a0-ba84-437bdc3e2a3c"/>
+        </listOfModifiers>
+        <kineticLaw metaid="fefdf452-0d5f-4231-b4d1-56e6ea77dfce">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> def </ci>
+              <apply>
+                <ci> function_4_cG_m_trscr </ci>
+                <ci> L </ci>
+                <ci> cL </ci>
+                <ci> cP </ci>
+                <ci> cT </ci>
+                <ci> def </ci>
+                <ci> g14 </ci>
+                <ci> g15 </ci>
+                <ci> n </ci>
+                <ci> n12 </ci>
+                <ci> o </ci>
+                <ci> q4 </ci>
+              </apply>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="cG_m_degr" name="cG_m_degr" metaid="metaid_0000196" reversible="false" sboTerm="SBO:0000179">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqmodel="http://biomodels.net/model-qualifiers/" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#metaid_0000196">
+	<bqbiol:isVersionOf>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/go/GO:0006402"/>
+	</rdf:Bag>
+	</bqbiol:isVersionOf>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+              <listOfReactants>
+          <speciesReference species="cG_m" metaid="_2614fa66-8d5c-4f50-84a0-148ce37a91c3"/>
+        </listOfReactants>
+        <kineticLaw metaid="_8fc2075e-f639-4bb8-b178-47c5c0d30c0c">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> def </ci>
+              <apply>
+                <ci> function_4_cG_m_degr </ci>
+                <ci> cG_m </ci>
+                <ci> def </ci>
+                <ci> m18 </ci>
+              </apply>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="cG_trsl" name="cG_trsl" metaid="metaid_0000197" reversible="false" sboTerm="SBO:0000184">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqmodel="http://biomodels.net/model-qualifiers/" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#metaid_0000197">
+	<bqbiol:isVersionOf>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/go/GO:0006412"/>
+	</rdf:Bag>
+	</bqbiol:isVersionOf>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+              <listOfProducts>
+          <speciesReference species="cG" metaid="e6b89387-ef07-478d-947d-578bbd89c62a"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="cG_m" metaid="b63d5f97-d861-4c70-879f-cf93640ce9a2"/>
+        </listOfModifiers>
+        <kineticLaw metaid="_4a5cbfbf-2398-48e5-8dd6-27ce2263821d">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> def </ci>
+              <apply>
+                <ci> function_4_cG_trsl </ci>
+                <ci> cG_m </ci>
+                <ci> def </ci>
+                <ci> p11 </ci>
+              </apply>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="cG_degr" name="cG_degr" metaid="metaid_0000198" reversible="false" sboTerm="SBO:0000179">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqmodel="http://biomodels.net/model-qualifiers/" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#metaid_0000198">
+	<bqbiol:isVersionOf>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/go/GO:0030163"/>
+	</rdf:Bag>
+	</bqbiol:isVersionOf>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+              <listOfReactants>
+          <speciesReference species="cG" metaid="cf49c341-51c8-4d9a-8327-a7b19bc140a0"/>
+        </listOfReactants>
+        <kineticLaw metaid="_8317705e-fbe9-49e8-823f-95aa58994270">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> def </ci>
+              <apply>
+                <ci> function_4_cG_degr </ci>
+                <ci> cG </ci>
+                <ci> def </ci>
+                <ci> m19 </ci>
+              </apply>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="cG_cZTL_assoc" name="cG_cZTL_assoc" metaid="metaid_0000199" sboTerm="SBO:0000526">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqmodel="http://biomodels.net/model-qualifiers/" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#metaid_0000199">
+	<bqbiol:isVersionOf>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/go/GO:0006461"/>
+	</rdf:Bag>
+	</bqbiol:isVersionOf>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+              <listOfReactants>
+          <speciesReference species="cG" metaid="_02b0afef-ffa1-4cbf-b6ea-d4e81820b683"/>
+          <speciesReference species="cZTL" metaid="cc8cfbcc-ff08-4d61-be76-30d5c221e22e"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="cZG" metaid="_312a175f-7428-4eb7-ad79-f896597c6319"/>
+        </listOfProducts>
+        <kineticLaw metaid="_12b61cb1-67b3-40ef-8937-ed5240bb80d8">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> def </ci>
+              <apply>
+                <ci> function_4_cG_cZTL_assoc </ci>
+                <ci> D </ci>
+                <ci> L </ci>
+                <ci> cG </ci>
+                <ci> cZG </ci>
+                <ci> cZTL </ci>
+                <ci> def </ci>
+                <ci> p12 </ci>
+                <ci> p13 </ci>
+              </apply>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="cZTL_trsl" name="cZTL_trsl" metaid="metaid_0000200" reversible="false" sboTerm="SBO:0000183">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqmodel="http://biomodels.net/model-qualifiers/" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#metaid_0000200">
+	<bqbiol:isVersionOf>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/go/GO:0006412"/>
+	</rdf:Bag>
+	</bqbiol:isVersionOf>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+              <listOfProducts>
+          <speciesReference species="cZTL" metaid="_2a9950f1-1403-4b90-8d26-8ccd3ad57349"/>
+        </listOfProducts>
+        <kineticLaw metaid="_03c9be63-b65c-48b4-955f-d20b1dc10eb6">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> def </ci>
+              <apply>
+                <ci> function_4_cZTL_trsl </ci>
+                <ci> def </ci>
+                <ci> p14 </ci>
+              </apply>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="cZTL_degr" name="cZTL_degr" metaid="metaid_0000201" reversible="false" sboTerm="SBO:0000179">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqmodel="http://biomodels.net/model-qualifiers/" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#metaid_0000201">
+	<bqbiol:isVersionOf>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/go/GO:0030163"/>
+	</rdf:Bag>
+	</bqbiol:isVersionOf>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+              <listOfReactants>
+          <speciesReference species="cZTL" metaid="fe28b5b1-1597-4fa9-a726-b04232377639"/>
+        </listOfReactants>
+        <kineticLaw metaid="_3d75d0aa-3d82-415e-bd6f-ad7440689d5c">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> def </ci>
+              <apply>
+                <ci> function_4_cZTL_degr </ci>
+                <ci> cZTL </ci>
+                <ci> def </ci>
+                <ci> m20 </ci>
+              </apply>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction id="cZG_degr" name="cZG_degr" metaid="metaid_0000202" reversible="false" sboTerm="SBO:0000179">
+        <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqmodel="http://biomodels.net/model-qualifiers/" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+	<rdf:Description rdf:about="#metaid_0000202">
+	<bqbiol:isVersionOf>
+	<rdf:Bag>
+	<rdf:li rdf:resource="http://identifiers.org/go/GO:0030163"/>
+	</rdf:Bag>
+	</bqbiol:isVersionOf>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+              <listOfReactants>
+          <speciesReference species="cZG" metaid="_0ab40426-91f1-4e3d-9bfd-91be2ed56885"/>
+        </listOfReactants>
+        <kineticLaw metaid="b55face1-3026-42de-b8e7-d22739836b9a">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <times/>
+              <ci> def </ci>
+              <apply>
+                <ci> function_4_cZG_degr </ci>
+                <ci> cZG </ci>
+                <ci> def </ci>
+                <ci> m21 </ci>
+              </apply>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+    </listOfReactions>
+  </model>
+</sbml>
