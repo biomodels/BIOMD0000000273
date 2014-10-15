@@ -1,3 +1,21 @@
+# BIOMD0000000273: Pokhilko2010_CircClock
+
+## Installation
+
+Download this repository, and install with distutils
+
+`python setup.py install`
+
+Or, install using pip
+
+`pip install git+https://github.com/biomodels/BIOMD0000000273.git`
+
+To install a specific version (in this example, from the 2014-09-16 BioModels release)
+
+`pip install git+https://github.com/biomodels/BIOMD0000000273.git@20140916`
+
+
+# Model Notes
 
 
 This a model from the article:  
@@ -22,4 +40,5 @@ important morning-expressed genes follows their release from a night inhibitor
 and show that the PRR5 gene contributes to the NI. The multiple PRR genes of
 Arabidopsis uncouple events in the late night from light-driven responses in
 the day, increasing the flexibility of rhythmic regulation.
+
 
